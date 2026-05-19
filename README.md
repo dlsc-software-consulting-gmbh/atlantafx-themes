@@ -6,13 +6,20 @@ Clone the repository and use it as a starting point for your own theme.
 
 ## Themes
 
-| File | Mode | Description |
-|---|---|---|
-| `browny.scss` | dark | Warm chocolate canvas, gold accent, hot-pink danger |
-| `browny-light.scss` | light | Warm cream canvas, same gold and hot-pink palette |
-| `navy.scss` | dark | Dark navy canvas, gold accent |
-| `navy-light.scss` | light | White canvas, navy accent |
-| `news.scss` | dark | Slate canvas, indigo accent, teal success |
+| File | Java class | Mode | Description |
+|---|---|---|---|
+| `browny.scss` | `Browny` | dark | Warm chocolate canvas, gold accent, hot-pink danger |
+| `navy-dark.scss` | `NavyDark` | dark | Dark navy canvas, gold accent |
+| `navy-light.scss` | `NavyLight` | light | White canvas, navy accent |
+| `news.scss` | `News` | dark | Slate canvas, indigo accent, teal success |
+| `wip-dark.scss` | `WipDark` | dark | Work-in-progress dark theme — primary blue, brand red |
+| `wip-light.scss` | `WipLight` | light | Work-in-progress light theme — primary blue, brand red |
+| `github-soft-dark.scss` | `GithubSoftDark` | dark | GitHub Dark Dimmed palette (Primer dark_dimmed) |
+| `github-light-default.scss` | `GithubLightDefault` | light | GitHub Light Default palette (Primer light) |
+| `github-dark-colorblind.scss` | `GithubDarkColorblind` | dark | GitHub Dark for Protanopia & Deuteranopia — orange danger, blue success |
+| `github-light-colorblind.scss` | `GithubLightColorblind` | light | GitHub Light for Protanopia & Deuteranopia — orange danger, blue success |
+| `github-dark-tritanopia.scss` | `GithubDarkTritanopia` | dark | GitHub Dark for Tritanopia — red danger, blue success |
+| `github-light-tritanopia.scss` | `GithubLightTritanopia` | light | GitHub Light for Tritanopia — red danger, blue success |
 
 Compiled CSS files are written to `src/main/resources/com/dlsc/atlantafx/themes/`.
 
@@ -33,11 +40,13 @@ The build unpacks the AtlantaFX SASS sources from the `atlantafx-styles` JAR int
    - `@forward .../settings/config with ($darkMode: true/false)`
    - `@use .../general` and `@use .../components`
 2. Add a `<arg>` entry to the `sass-cli-maven-plugin` configuration in `pom.xml`.
-3. Run `mvn compile`.
+3. Create a Java class in `src/main/java/com/dlsc/atlantafx/themes/` implementing `atlantafx.base.theme.Theme`.
+4. Register the new class in the `provides` directive of `src/main/java/module-info.java` so the `ServiceLoader` and unit tests pick it up.
+5. Run `mvn compile`.
 
 ## Applying a theme
 
-Each theme ships with a ready-to-use `Theme` implementation (e.g. `NavyDark`, `NavyLight`, `Browny`, `News`).
+Each theme ships with a ready-to-use `Theme` implementation (see the Java class column in the table above).
 Pass it to `Application.setUserAgentStylesheet()` at startup:
 
 ```java
