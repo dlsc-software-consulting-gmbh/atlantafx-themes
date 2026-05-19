@@ -1,0 +1,129 @@
+@use "sass:color";
+
+/* Dark navy background (#1a2744) with gold (#c9a84c) accents  */
+
+// modify color scale
+@forward "../target/atlantafx/styles/settings/color-scale" with (
+
+  $dark:    #111b33,   // --color-navy-dark
+  $light:   #ffffff,
+
+  // base — navy-tinted neutrals (0 = lightest, 9 = darkest)
+  $base-0: #eef0f6,
+  $base-1: #d0d4e3,
+  $base-2: #a8b0c7,
+  $base-3: #7b87a8,
+  $base-4: #566285,
+  $base-5: #3d4f73,
+  $base-6: #2d3f66,
+  $base-7: #233057,
+  $base-8: #1a2744,   // --color-navy
+  $base-9: #111b33,   // --color-navy-dark
+
+  // accent — gold palette
+  $accent-0: #fdf6e3,
+  $accent-1: #f7e9b8,
+  $accent-2: #efda8c,
+  $accent-3: #e8cf82,  // --color-gold-light
+  $accent-4: #c9a84c,  // --color-gold
+  $accent-5: #b08c33,
+  $accent-6: #8f6f22,
+  $accent-7: #6e5418,
+  $accent-8: #4e3b0f,
+  $accent-9: #2e2208,
+
+  // success — muted green
+  $success-0: #d4f5c8,
+  $success-1: #aaeaa0,
+  $success-2: #80de78,
+  $success-3: #5bc451,
+  $success-4: #43a83a,
+  $success-5: #34882d,
+  $success-6: #287022,
+  $success-7: #1e5919,
+  $success-8: #154210,
+  $success-9: #0c2b09,
+
+  // warning — amber
+  $warning-0: #fef7e0,
+  $warning-1: #fbeab5,
+  $warning-2: #f7db88,
+  $warning-3: #f2c95b,
+  $warning-4: #d9a82e,
+  $warning-5: #b08522,
+  $warning-6: #8c6518,
+  $warning-7: #684910,
+  $warning-8: #452f09,
+  $warning-9: #231803,
+
+  // danger — crimson (matches site form-error: #f4a7a7 / rgba(200,50,50))
+  $danger-0: #fcd8dc,
+  $danger-1: #f8a8af,
+  $danger-2: #f27880,
+  $danger-3: #e84850,
+  $danger-4: #c8262e,
+  $danger-5: #a01d24,
+  $danger-6: #86181e,
+  $danger-7: #6c1318,
+  $danger-8: #520d12,
+  $danger-9: #38080c
+);
+
+@use "../target/atlantafx/styles/settings/color-scale" as scale;
+
+// modify functional colors
+@forward "../target/atlantafx/styles/settings/color-vars" with (
+
+  // text: light on dark navy background
+  $fg-default:           scale.$base-0,
+  $fg-muted:             scale.$base-1,
+  $fg-subtle:            scale.$base-2,
+  $fg-onEmphasis:        scale.$base-9,   // dark text on gold/accent backgrounds
+
+  // canvas: navy backgrounds
+  $canvas-default:       scale.$base-8,
+  $canvas-overlay:       scale.$base-7,
+  $canvas-inset:         scale.$base-9,
+  $canvas-subtle:        scale.$base-7,
+
+  $border-default:       color.change(scale.$base-4, $alpha: 0.7),
+  $border-muted:         scale.$base-5,
+  $border-subtle:        scale.$base-6,
+
+  $neutral-emphasisPlus: scale.$base-2,
+  $neutral-emphasis:     scale.$base-3,
+  $neutral-muted:        scale.$base-5,
+  $neutral-subtle:       scale.$base-7,
+
+  // accent: gold — used for labels, focus rings, primary buttons
+  $accent-fg:            scale.$accent-3,   // gold-light for readable text on dark
+  $accent-emphasis:      scale.$accent-4,   // gold for filled elements
+  $accent-muted:         color.change(scale.$accent-4, $alpha: 0.3),
+  $accent-subtle:        color.change(scale.$accent-4, $alpha: 0.15),
+
+  $success-fg:           scale.$success-1,
+  $success-emphasis:     scale.$success-3,
+  $success-muted:        color.change(scale.$success-3, $alpha: 0.3),
+  $success-subtle:       color.change(scale.$success-3, $alpha: 0.1),
+
+  $warning-fg:           scale.$warning-2,
+  $warning-emphasis:     scale.$warning-3,
+  $warning-muted:        color.change(scale.$warning-3, $alpha: 0.3),
+  $warning-subtle:       color.change(scale.$warning-3, $alpha: 0.1),
+
+  // danger: matches site's form-error palette (#f4a7a7 / rgba(200,50,50))
+  $danger-fg:            scale.$danger-1,
+  $danger-emphasis:      scale.$danger-3,
+  $danger-muted:         color.change(scale.$danger-3, $alpha: 0.3),
+  $danger-subtle:        color.change(scale.$danger-3, $alpha: 0.1)
+);
+
+// dark mode — navy is the canvas colour
+@forward "../target/atlantafx/styles/settings/config" with (
+  $darkMode: true
+);
+
+@use "../target/atlantafx/styles/general";
+
+// modify individual control settings
+@use "../target/atlantafx/styles/components";

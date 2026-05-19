@@ -1,0 +1,131 @@
+@use "sass:color";
+
+/* Slate canvas - Indigo accent - Teal success - Amber warning      */
+
+// modify color scale
+@forward "../target/atlantafx/styles/settings/color-scale" with (
+
+  $dark:    #080d1a,
+  $light:   #ffffff,
+
+  // base — Tailwind slate scale (0 = lightest, 9 = darkest)
+  $base-0:  #f1f5f9,  // --text-primary
+  $base-1:  #cbd5e1,
+  $base-2:  #94a3b8,  // --text-secondary
+  $base-3:  #64748b,  // --text-muted
+  $base-4:  #475569,
+  $base-5:  #334155,  // --border
+  $base-6:  #263248,  // --bg-elevated
+  $base-7:  #1e293b,  // --bg-surface / --bg-card
+  $base-8:  #0f172a,  // --bg-base
+  $base-9:  #080d1a,
+
+  // accent — indigo scale  (--accent #6366f1 / --accent-light #818cf8)
+  $accent-0: #eef2ff,
+  $accent-1: #e0e7ff,
+  $accent-2: #c7d2fe,
+  $accent-3: #a5b4fc,
+  $accent-4: #818cf8,  // --accent-light
+  $accent-5: #6366f1,  // --accent
+  $accent-6: #4f46e5,
+  $accent-7: #4338ca,
+  $accent-8: #312e81,  // --accent-dim (used as badge background)
+  $accent-9: #1e1b4b,
+
+  // success — teal  (--teal #14b8a6 / --teal-dim #0d4440)
+  $success-0: #f0fdfa,
+  $success-1: #ccfbf1,
+  $success-2: #99f6e4,
+  $success-3: #5eead4,
+  $success-4: #2dd4bf,
+  $success-5: #14b8a6,  // --teal
+  $success-6: #0d9488,
+  $success-7: #0f766e,
+  $success-8: #115e59,
+  $success-9: #0d4440,  // --teal-dim
+
+  // warning — amber  (#f59e0b used as datetime category accent)
+  $warning-0: #fffbeb,
+  $warning-1: #fef3c7,
+  $warning-2: #fde68a,
+  $warning-3: #fcd34d,
+  $warning-4: #fbbf24,
+  $warning-5: #f59e0b,  // site datetime category colour
+  $warning-6: #d97706,
+  $warning-7: #b45309,
+  $warning-8: #92400e,
+  $warning-9: #78350f,
+
+  // danger — rose  (no explicit danger colour on site; rose fits the dark aesthetic)
+  $danger-0: #fff1f2,
+  $danger-1: #ffe4e6,
+  $danger-2: #fecdd3,
+  $danger-3: #fda4af,
+  $danger-4: #fb7185,
+  $danger-5: #f43f5e,
+  $danger-6: #e11d48,
+  $danger-7: #be123c,
+  $danger-8: #9f1239,
+  $danger-9: #881337
+);
+
+@use "../target/atlantafx/styles/settings/color-scale" as scale;
+
+// modify functional colors
+@forward "../target/atlantafx/styles/settings/color-vars" with (
+
+  // light text on dark slate canvas
+  $fg-default:           scale.$base-0,   // --text-primary  #f1f5f9
+  $fg-muted:             scale.$base-2,   // --text-secondary #94a3b8
+  $fg-subtle:            scale.$base-3,   // --text-muted     #64748b
+  $fg-onEmphasis:        scale.$light,    // white on indigo/accent fills
+
+  // dark slate canvas  (--bg-base / --bg-surface / --bg-elevated)
+  $canvas-default:       scale.$base-8,   // --bg-base
+  $canvas-overlay:       scale.$base-7,   // --bg-surface
+  $canvas-inset:         scale.$base-9,
+  $canvas-subtle:        scale.$base-7,   // --bg-card
+
+  $border-default:       color.change(scale.$base-5, $alpha: 0.8),  // --border
+  $border-muted:         scale.$base-6,   // --bg-elevated (subtle dividers)
+  $border-subtle:        scale.$base-7,
+
+  $neutral-emphasisPlus: scale.$base-0,
+  $neutral-emphasis:     scale.$base-1,
+  $neutral-muted:        scale.$base-3,
+  $neutral-subtle:       scale.$base-6,
+
+  // accent: indigo — buttons, links, focus rings, active pills
+  $accent-fg:            scale.$accent-4,   // --accent-light (readable on dark)
+  $accent-emphasis:      scale.$accent-5,   // --accent       (filled elements)
+  $accent-muted:         color.change(scale.$accent-5, $alpha: 0.3),
+  $accent-subtle:        color.change(scale.$accent-5, $alpha: 0.15),  // --accent-dim ≈
+
+  // success: teal  (--teal)
+  $success-fg:           scale.$success-3,   // lighter teal, readable on dark bg
+  $success-emphasis:     scale.$success-5,   // --teal
+  $success-muted:        color.change(scale.$success-5, $alpha: 0.3),
+  $success-subtle:       color.change(scale.$success-5, $alpha: 0.12),
+
+  // warning: amber
+  $warning-fg:           scale.$warning-3,
+  $warning-emphasis:     scale.$warning-5,
+  $warning-muted:        color.change(scale.$warning-5, $alpha: 0.3),
+  $warning-subtle:       color.change(scale.$warning-5, $alpha: 0.12),
+
+  // danger: rose
+  $danger-fg:            scale.$danger-3,
+  $danger-emphasis:      scale.$danger-5,
+  $danger-muted:         color.change(scale.$danger-5, $alpha: 0.3),
+  $danger-subtle:        color.change(scale.$danger-5, $alpha: 0.12)
+);
+
+// dark mode — slate is the canvas colour
+@forward "../target/atlantafx/styles/settings/config" with (
+  $darkMode: true
+);
+
+@use "../target/atlantafx/styles/general";
+
+// modify individual control settings
+@use "../target/atlantafx/styles/components";

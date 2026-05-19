@@ -1,0 +1,129 @@
+@use "sass:color";
+
+/* Light navy background - Gold accent - light counterpart to navy.scss */
+
+// same color scale as the dark navy theme
+@forward "../target/atlantafx/styles/settings/color-scale" with (
+
+  $dark:    #111b33,
+  $light:   #ffffff,
+
+  // base — navy-tinted neutrals (0 = lightest, 9 = darkest)
+  $base-0: #eef0f6,
+  $base-1: #d0d4e3,
+  $base-2: #a8b0c7,
+  $base-3: #7b87a8,
+  $base-4: #566285,
+  $base-5: #3d4f73,
+  $base-6: #2d3f66,
+  $base-7: #233057,
+  $base-8: #1a2744,
+  $base-9: #111b33,
+
+  // accent — navy blue (mirrors the base scale)
+  $accent-0: #eef0f6,
+  $accent-1: #d0d4e3,
+  $accent-2: #a8b0c7,
+  $accent-3: #7b87a8,
+  $accent-4: #566285,
+  $accent-5: #3d4f73,
+  $accent-6: #2d3f66,
+  $accent-7: #233057,
+  $accent-8: #1a2744,
+  $accent-9: #111b33,
+
+  // success — muted green
+  $success-0: #d4f5c8,
+  $success-1: #aaeaa0,
+  $success-2: #80de78,
+  $success-3: #5bc451,
+  $success-4: #43a83a,
+  $success-5: #34882d,
+  $success-6: #287022,
+  $success-7: #1e5919,
+  $success-8: #154210,
+  $success-9: #0c2b09,
+
+  // warning — amber
+  $warning-0: #fef7e0,
+  $warning-1: #fbeab5,
+  $warning-2: #f7db88,
+  $warning-3: #f2c95b,
+  $warning-4: #d9a82e,
+  $warning-5: #b08522,
+  $warning-6: #8c6518,
+  $warning-7: #684910,
+  $warning-8: #452f09,
+  $warning-9: #231803,
+
+  // danger — crimson
+  $danger-0: #fcd8dc,
+  $danger-1: #f8a8af,
+  $danger-2: #f27880,
+  $danger-3: #e84850,
+  $danger-4: #c8262e,
+  $danger-5: #a01d24,
+  $danger-6: #86181e,
+  $danger-7: #6c1318,
+  $danger-8: #520d12,
+  $danger-9: #38080c
+);
+
+@use "../target/atlantafx/styles/settings/color-scale" as scale;
+
+// light-mode functional colors
+@forward "../target/atlantafx/styles/settings/color-vars" with (
+
+  // dark navy text on white canvas
+  $fg-default:           scale.$base-9,
+  $fg-muted:             scale.$base-7,
+  $fg-subtle:            scale.$base-5,
+  $fg-onEmphasis:        scale.$light,    // white text on filled navy/gold elements
+
+  // white canvas with light blue-grey insets
+  $canvas-default:       scale.$light,
+  $canvas-overlay:       scale.$light,
+  $canvas-inset:         scale.$base-0,
+  $canvas-subtle:        scale.$base-0,
+
+  $border-default:       scale.$base-2,
+  $border-muted:         scale.$base-1,
+  $border-subtle:        color.change(scale.$base-9, $alpha: 0.1),
+
+  $neutral-emphasisPlus: scale.$base-9,
+  $neutral-emphasis:     scale.$base-5,
+  $neutral-muted:        color.change(scale.$base-3, $alpha: 0.2),
+  $neutral-subtle:       color.change(scale.$base-1, $alpha: 0.5),
+
+  // accent: navy blue — buttons, links, focus rings
+  $accent-fg:            scale.$accent-5,   // #3d4f73 mid-navy, readable on white
+  $accent-emphasis:      scale.$accent-5,   // #3d4f73 for filled elements
+  $accent-muted:         color.change(scale.$accent-5, $alpha: 0.3),
+  $accent-subtle:        scale.$accent-0,   // #eef0f6 light blue-grey background
+
+  // success: muted green
+  $success-fg:           scale.$success-5,
+  $success-emphasis:     scale.$success-4,
+  $success-muted:        color.change(scale.$success-3, $alpha: 0.4),
+  $success-subtle:       scale.$success-0,
+
+  // warning: amber
+  $warning-fg:           scale.$warning-6,
+  $warning-emphasis:     scale.$warning-4,
+  $warning-muted:        color.change(scale.$warning-3, $alpha: 0.4),
+  $warning-subtle:       scale.$warning-0,
+
+  // danger: crimson
+  $danger-fg:            scale.$danger-5,
+  $danger-emphasis:      scale.$danger-4,
+  $danger-muted:         color.change(scale.$danger-3, $alpha: 0.4),
+  $danger-subtle:        scale.$danger-0
+);
+
+// light mode
+@forward "../target/atlantafx/styles/settings/config" with (
+  $darkMode: false
+);
+
+@use "../target/atlantafx/styles/general";
+@use "../target/atlantafx/styles/components";

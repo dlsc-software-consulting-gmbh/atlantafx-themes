@@ -1,0 +1,129 @@
+@use "sass:color";
+
+/* Navielektro corporate identity - dark variant
+ * Primary blue #004273 - Brand red #DC2F34 - Dark mode
+ */
+
+@forward "../target/atlantafx/styles/settings/color-scale" with (
+
+  $dark:    #0a1530,
+  $light:   #ffffff,
+
+  // base — neutral grey-blue (0 = lightest, 9 = darkest)
+  $base-0:  #f4f6f9,
+  $base-1:  #e3e8f0,
+  $base-2:  #c3cdd9,
+  $base-3:  #8fa3b8,
+  $base-4:  #5e7a95,
+  $base-5:  #3d5a73,
+  $base-6:  #2a4260,
+  $base-7:  #1d3050,
+  $base-8:  #142342,
+  $base-9:  #0a1530,
+
+  // accent — Navielektro corporate blue (#004273)
+  $accent-0: #ebf3fa,
+  $accent-1: #c7dff2,
+  $accent-2: #91c5e8,
+  $accent-3: #5aabdc,
+  $accent-4: #1a7ab8,
+  $accent-5: #004273,  // primary brand blue
+  $accent-6: #003861,
+  $accent-7: #002e50,
+  $accent-8: #002340,
+  $accent-9: #001830,
+
+  // success — teal-green
+  $success-0: #e6f5f0,
+  $success-1: #b8e5d5,
+  $success-2: #82d1b8,
+  $success-3: #4dba99,
+  $success-4: #1ea17f,
+  $success-5: #158569,
+  $success-6: #0e6b55,
+  $success-7: #095243,
+  $success-8: #063b30,
+  $success-9: #02241d,
+
+  // warning — amber
+  $warning-0: #fff8e6,
+  $warning-1: #fdedc0,
+  $warning-2: #fad98a,
+  $warning-3: #f5c44e,
+  $warning-4: #ecac10,
+  $warning-5: #c78e00,
+  $warning-6: #9e7000,
+  $warning-7: #775500,
+  $warning-8: #523b00,
+  $warning-9: #2e2100,
+
+  // danger — Navielektro brand red (#DC2F34)
+  $danger-0: #fde8e9,
+  $danger-1: #f9c0c2,
+  $danger-2: #f39499,
+  $danger-3: #ec6368,
+  $danger-4: #e23e44,
+  $danger-5: #dc2f34,  // brand red
+  $danger-6: #b82428,
+  $danger-7: #921b1e,
+  $danger-8: #6c1315,
+  $danger-9: #450c0d
+);
+
+@use "../target/atlantafx/styles/settings/color-scale" as scale;
+
+@forward "../target/atlantafx/styles/settings/color-vars" with (
+
+  // light text on dark navy canvas
+  $fg-default:           scale.$base-0,
+  $fg-muted:             scale.$base-1,
+  $fg-subtle:            scale.$base-3,
+  $fg-onEmphasis:        scale.$light,
+
+  // dark navy canvas
+  $canvas-default:       scale.$base-8,   // #142342
+  $canvas-overlay:       scale.$base-7,   // #1d3050
+  $canvas-inset:         scale.$base-9,   // #0a1530
+  $canvas-subtle:        scale.$base-7,
+
+  $border-default:       color.change(scale.$base-4, $alpha: 0.7),
+  $border-muted:         scale.$base-6,
+  $border-subtle:        scale.$base-7,
+
+  $neutral-emphasisPlus: scale.$base-2,
+  $neutral-emphasis:     scale.$base-3,
+  $neutral-muted:        scale.$base-5,
+  $neutral-subtle:       scale.$base-7,
+
+  // accent: lighter brand blue for readability on dark canvas
+  $accent-fg:            scale.$accent-3,   // #5aabdc — readable on dark
+  $accent-emphasis:      scale.$accent-4,   // #1a7ab8 — filled buttons/badges
+  $accent-muted:         color.change(scale.$accent-4, $alpha: 0.3),
+  $accent-subtle:        color.change(scale.$accent-5, $alpha: 0.15),
+
+  // success: teal-green
+  $success-fg:           scale.$success-2,
+  $success-emphasis:     scale.$success-4,
+  $success-muted:        color.change(scale.$success-4, $alpha: 0.3),
+  $success-subtle:       color.change(scale.$success-4, $alpha: 0.12),
+
+  // warning: amber
+  $warning-fg:           scale.$warning-2,
+  $warning-emphasis:     scale.$warning-4,
+  $warning-muted:        color.change(scale.$warning-4, $alpha: 0.3),
+  $warning-subtle:       color.change(scale.$warning-4, $alpha: 0.12),
+
+  // danger: lighter brand red for readable text on dark canvas
+  $danger-fg:            scale.$danger-2,   // #f39499 — light on dark
+  $danger-emphasis:      scale.$danger-5,   // #dc2f34 — filled elements
+  $danger-muted:         color.change(scale.$danger-5, $alpha: 0.3),
+  $danger-subtle:        color.change(scale.$danger-5, $alpha: 0.12)
+);
+
+// dark mode
+@forward "../target/atlantafx/styles/settings/config" with (
+  $darkMode: true
+);
+
+@use "../target/atlantafx/styles/general";
+@use "../target/atlantafx/styles/components";
