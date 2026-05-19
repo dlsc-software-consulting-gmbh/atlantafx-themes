@@ -35,6 +35,19 @@ The build unpacks the AtlantaFX SASS sources from the `atlantafx-styles` JAR int
 2. Add a `<arg>` entry to the `sass-cli-maven-plugin` configuration in `pom.xml`.
 3. Run `mvn compile`.
 
+## Applying a theme
+
+Each theme ships with a ready-to-use `Theme` implementation (e.g. `NavyDark`, `NavyLight`, `Browny`, `News`).
+Pass it to `Application.setUserAgentStylesheet()` at startup:
+
+```java
+@Override
+public void start(Stage stage) {
+    Application.setUserAgentStylesheet(new NavyDark().getUserAgentStylesheet());
+    // ...
+}
+```
+
 ## Screenshots
 
 ### Browny (dark)

@@ -4667,6 +4667,6 @@ Add support for NO_HEADER tweak in tables .table-view.no-header > .column-header
   -fx-effect: dropshadow(three-pass-box, -color-shadow-default, 8px, 0.6, 0, 2);
 }
 
-/* Navielektro corporate identity — dark variant
- * Primary blue #004273 · Brand red #DC2F34 · Dark mode
+/* Navielektro corporate identity - dark variant
+ * Primary blue #004273 - Brand red #DC2F34 - Dark mode
  */

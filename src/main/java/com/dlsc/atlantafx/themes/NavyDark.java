@@ -2,21 +2,21 @@ package com.dlsc.atlantafx.themes;
 
 import atlantafx.base.theme.Theme;
 
-public final class Navy implements Theme {
+public final class NavyDark implements Theme {
 
-    public Navy() {
+    public NavyDark() {
     }
 
     public String getName() {
-        return "Navy";
+        return "NavyLight Dark";
     }
 
     public String getUserAgentStylesheet() {
-        return "/com/dlsc/atlantafx/themes/navy.css";
+        return "/com/dlsc/atlantafx/themes/navy-dark.css";
     }
 
     public String getUserAgentStylesheetBSS() {
-        return "/com/dlsc/atlantafx/themes/navy.bss";
+        return "/com/dlsc/atlantafx/themes/navy-dark.bss";
     }
 
     public boolean isDarkMode() {

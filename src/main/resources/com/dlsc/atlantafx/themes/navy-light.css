@@ -4667,4 +4667,4 @@ Add support for NO_HEADER tweak in tables .table-view.no-header > .column-header
   -fx-effect: dropshadow(three-pass-box, -color-shadow-default, 6px, 0.3, 0, 2);
 }
 
-/* Light navy background - Gold accent - light counterpart to navy.scss */
+/* Light navy background - Gold accent - light counterpart to navy-dark.scss */
