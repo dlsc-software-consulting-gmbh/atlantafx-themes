@@ -20,6 +20,6 @@ public final class NavyLight implements Theme {
     }
 
     public boolean isDarkMode() {
-        return true;
+        return false;
     }
 }

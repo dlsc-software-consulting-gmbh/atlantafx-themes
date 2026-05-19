@@ -8,7 +8,7 @@ public final class NavyDark implements Theme {
     }
 
     public String getName() {
-        return "NavyLight Dark";
+        return "Navy Dark";
     }
 
     public String getUserAgentStylesheet() {
