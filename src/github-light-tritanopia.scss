@@ -1,0 +1,128 @@
+@use "sass:color";
+
+/* GitHub "Light Tritanopia" theme                                      */
+/* Canvas: #ffffff - Danger: red (#d1242f) - Success: blue (#0969da)   */
+/* Green replaced by blue so success differs from yellow for tritanopes */
+
+// modify color scale
+@forward "../target/atlantafx/styles/settings/color-scale" with (
+
+  $dark:    #1f2328,   // fg-default (darkest content color)
+  $light:   #ffffff,   // canvas-default
+
+  // base — GitHub Light gray scale (0 = lightest, 9 = darkest)
+  $base-0:  #f6f8fa,  // canvas-subtle / canvas-inset
+  $base-1:  #eaeef2,  // border-muted
+  $base-2:  #d8dee4,  // border-subtle
+  $base-3:  #d1d9e0,  // border-default
+  $base-4:  #b6c2cf,
+  $base-5:  #8c959f,
+  $base-6:  #6e7781,  // fg-subtle
+  $base-7:  #59636e,  // fg-muted
+  $base-8:  #424a53,
+  $base-9:  #1f2328,  // fg-default
+
+  // accent — GitHub blue scale (also used for success)
+  $accent-0: #ddf4ff,
+  $accent-1: #b6e3ff,
+  $accent-2: #80ccff,
+  $accent-3: #54aeff,
+  $accent-4: #218bff,
+  $accent-5: #0969da,  // accent-fg / accent-emphasis
+  $accent-6: #0550ae,
+  $accent-7: #033d8b,
+  $accent-8: #0a3069,
+  $accent-9: #002155,
+
+  // success — blue (replaces green for tritanopia users)
+  $success-0: #ddf4ff,
+  $success-1: #b6e3ff,
+  $success-2: #80ccff,
+  $success-3: #54aeff,
+  $success-4: #218bff,
+  $success-5: #0969da,  // success-fg / success-emphasis
+  $success-6: #0550ae,
+  $success-7: #033d8b,
+  $success-8: #0a3069,
+  $success-9: #002155,
+
+  // warning — amber (unchanged)
+  $warning-0: #fff8c5,
+  $warning-1: #fae17d,
+  $warning-2: #eac54f,
+  $warning-3: #d4a72c,
+  $warning-4: #bf8700,
+  $warning-5: #9a6700,  // warning-fg / warning-emphasis
+  $warning-6: #7d4e00,
+  $warning-7: #633c01,
+  $warning-8: #4d2d00,
+  $warning-9: #3b2300,
+
+  // danger — red (distinguishable from amber warning for tritanopia users)
+  $danger-0: #ffebe9,
+  $danger-1: #ffcecb,
+  $danger-2: #ffaba8,
+  $danger-3: #ff8182,
+  $danger-4: #fa4549,
+  $danger-5: #cf222e,  // danger-emphasis (≈ danger-fg #d1242f)
+  $danger-6: #a40e26,
+  $danger-7: #82071e,
+  $danger-8: #660018,
+  $danger-9: #4c0014
+);
+
+@use "../target/atlantafx/styles/settings/color-scale" as scale;
+
+// modify functional colors
+@forward "../target/atlantafx/styles/settings/color-vars" with (
+
+  $fg-default:           scale.$base-9,   // #1f2328
+  $fg-muted:             scale.$base-7,   // #59636e
+  $fg-subtle:            scale.$base-6,   // #6e7781
+  $fg-onEmphasis:        scale.$light,    // #ffffff
+
+  $canvas-default:       scale.$light,    // #ffffff
+  $canvas-overlay:       scale.$light,    // #ffffff
+  $canvas-inset:         scale.$base-0,   // #f6f8fa
+  $canvas-subtle:        scale.$base-0,   // #f6f8fa
+
+  $border-default:       scale.$base-3,   // #d1d9e0
+  $border-muted:         scale.$base-1,   // #eaeef2
+  $border-subtle:        scale.$base-2,   // #d8dee4
+
+  $neutral-emphasisPlus: scale.$base-9,
+  $neutral-emphasis:     scale.$base-5,
+  $neutral-muted:        color.change(scale.$base-4, $alpha: 0.2),
+  $neutral-subtle:       color.change(scale.$base-1, $alpha: 0.5),
+
+  // accent: blue
+  $accent-fg:            scale.$accent-5,  // #0969da
+  $accent-emphasis:      scale.$accent-5,  // #0969da
+  $accent-muted:         color.change(scale.$accent-5, $alpha: 0.4),
+  $accent-subtle:        scale.$accent-0,  // #ddf4ff
+
+  // success: blue (replaces green — distinct from amber warning for tritanopia)
+  $success-fg:           scale.$success-5,  // #0969da
+  $success-emphasis:     scale.$success-5,  // #0969da
+  $success-muted:        color.change(scale.$success-5, $alpha: 0.4),
+  $success-subtle:       scale.$success-0,  // #ddf4ff
+
+  // warning: amber
+  $warning-fg:           scale.$warning-5,  // #9a6700
+  $warning-emphasis:     scale.$warning-5,  // #9a6700
+  $warning-muted:        color.change(scale.$warning-5, $alpha: 0.4),
+  $warning-subtle:       scale.$warning-0,  // #fff8c5
+
+  // danger: red (distinguishable from amber warning for tritanopia users)
+  $danger-fg:            scale.$danger-5,   // #cf222e (≈ fgColor-danger #d1242f)
+  $danger-emphasis:      scale.$danger-5,   // #cf222e
+  $danger-muted:         color.change(scale.$danger-5, $alpha: 0.4),
+  $danger-subtle:        scale.$danger-0    // #ffebe9
+);
+
+@forward "../target/atlantafx/styles/settings/config" with (
+  $darkMode: false
+);
+
+@use "../target/atlantafx/styles/general";
+@use "../target/atlantafx/styles/components";

@@ -81,8 +81,14 @@
                         <arg>${scss.inputDir}/navy-dark.scss:${css.outputDir}/navy-dark.css</arg>
                         <arg>${scss.inputDir}/navy-light.scss:${css.outputDir}/navy-light.css</arg>
                         <arg>${scss.inputDir}/news.scss:${css.outputDir}/news.css</arg>
-                        <arg>${scss.inputDir}/navielektro-light.scss:${css.outputDir}/navielektro-light.css</arg>
-                        <arg>${scss.inputDir}/navielektro-dark.scss:${css.outputDir}/navielektro-dark.css</arg>
+                        <arg>${scss.inputDir}/wip-light.scss:${css.outputDir}/wip-light.css</arg>
+                        <arg>${scss.inputDir}/wip-dark.scss:${css.outputDir}/wip-dark.css</arg>
+                        <arg>${scss.inputDir}/github-soft-dark.scss:${css.outputDir}/github-soft-dark.css</arg>
+                        <arg>${scss.inputDir}/github-light-default.scss:${css.outputDir}/github-light-default.css</arg>
+                        <arg>${scss.inputDir}/github-dark-colorblind.scss:${css.outputDir}/github-dark-colorblind.css</arg>
+                        <arg>${scss.inputDir}/github-light-colorblind.scss:${css.outputDir}/github-light-colorblind.css</arg>
+                        <arg>${scss.inputDir}/github-dark-tritanopia.scss:${css.outputDir}/github-dark-tritanopia.css</arg>
+                        <arg>${scss.inputDir}/github-light-tritanopia.scss:${css.outputDir}/github-light-tritanopia.css</arg>
                         <arg>--no-source-map</arg>
                     </args>
                 </configuration>

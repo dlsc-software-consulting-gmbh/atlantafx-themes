@@ -1,0 +1,132 @@
+@use "sass:color";
+
+/* GitHub "Soft Dark" (Dark Dimmed) theme                              */
+/* Canvas: #22272e - Accent: #539bf5 (blue) - Based on Primer palette */
+
+// modify color scale
+@forward "../target/atlantafx/styles/settings/color-scale" with (
+
+  $dark:    #1c2128,   // canvas-inset (deepest recessed background)
+  $light:   #ffffff,
+
+  // base — blue-gray neutrals (0 = lightest text, 9 = deepest canvas)
+  $base-0:  #adbac7,  // fg-default (main text)
+  $base-1:  #909dab,
+  $base-2:  #768390,  // fg-muted
+  $base-3:  #636e7b,  // fg-subtle
+  $base-4:  #545d68,
+  $base-5:  #444c56,  // border-default / canvas-overlay
+  $base-6:  #373e47,  // border-muted
+  $base-7:  #2d333b,  // canvas-subtle
+  $base-8:  #22272e,  // canvas-default (primary dark canvas)
+  $base-9:  #1c2128,  // canvas-inset (deepest)
+
+  // accent — GitHub blue scale
+  $accent-0: #ddeeff,
+  $accent-1: #b4d8fc,
+  $accent-2: #80baf7,
+  $accent-3: #539bf5,  // accent-fg (readable on dark canvas)
+  $accent-4: #316dca,  // accent-emphasis
+  $accent-5: #2257a0,
+  $accent-6: #163f7a,
+  $accent-7: #0d2c58,
+  $accent-8: #071b38,
+  $accent-9: #030d1c,
+
+  // success — GitHub green scale
+  $success-0: #d4f5d4,
+  $success-1: #a6e8a8,
+  $success-2: #7ccf7f,
+  $success-3: #57ab5a,  // success-fg
+  $success-4: #347d39,  // success-emphasis
+  $success-5: #285e2d,
+  $success-6: #1c4421,
+  $success-7: #122c16,
+  $success-8: #0a180b,
+  $success-9: #040c05,
+
+  // warning — GitHub amber scale
+  $warning-0: #faecc8,
+  $warning-1: #f0d47a,
+  $warning-2: #ddb840,
+  $warning-3: #c69026,  // warning-fg
+  $warning-4: #966600,  // warning-emphasis
+  $warning-5: #7a5200,
+  $warning-6: #5e3e00,
+  $warning-7: #432b00,
+  $warning-8: #2a1a00,
+  $warning-9: #150d00,
+
+  // danger — GitHub red scale
+  $danger-0: #ffe0e0,
+  $danger-1: #ffb8b4,
+  $danger-2: #f5827a,
+  $danger-3: #e5534b,  // danger-fg
+  $danger-4: #c93c37,  // danger-emphasis
+  $danger-5: #a62b26,
+  $danger-6: #811e1a,
+  $danger-7: #5d1210,
+  $danger-8: #390a08,
+  $danger-9: #1a0504
+);
+
+@use "../target/atlantafx/styles/settings/color-scale" as scale;
+
+// modify functional colors
+@forward "../target/atlantafx/styles/settings/color-vars" with (
+
+  // text: soft blue-gray on dark canvas
+  $fg-default:           scale.$base-0,   // #adbac7 — main text
+  $fg-muted:             scale.$base-2,   // #768390
+  $fg-subtle:            scale.$base-3,   // #636e7b
+  $fg-onEmphasis:        #cdd9e5,         // lightest text used on colored fills
+
+  // canvas: layered dark blue-gray backgrounds
+  $canvas-default:       scale.$base-8,   // #22272e — primary canvas
+  $canvas-overlay:       scale.$base-5,   // #444c56 — elevated panels / dropdowns
+  $canvas-inset:         scale.$base-9,   // #1c2128 — recessed / sidebar
+  $canvas-subtle:        scale.$base-7,   // #2d333b — slightly raised surface
+
+  $border-default:       color.change(scale.$base-5, $alpha: 0.7),
+  $border-muted:         scale.$base-6,   // #373e47
+  $border-subtle:        scale.$base-7,   // #2d333b
+
+  $neutral-emphasisPlus: scale.$base-0,   // #adbac7
+  $neutral-emphasis:     scale.$base-2,   // #768390
+  $neutral-muted:        scale.$base-4,   // #545d68
+  $neutral-subtle:       scale.$base-7,   // #2d333b
+
+  // accent: GitHub blue
+  $accent-fg:            scale.$accent-3,  // #539bf5 — readable blue on dark
+  $accent-emphasis:      scale.$accent-4,  // #316dca — filled buttons / labels
+  $accent-muted:         color.change(scale.$accent-4, $alpha: 0.3),
+  $accent-subtle:        color.change(scale.$accent-4, $alpha: 0.15),
+
+  // success: GitHub green
+  $success-fg:           scale.$success-3,  // #57ab5a
+  $success-emphasis:     scale.$success-4,  // #347d39
+  $success-muted:        color.change(scale.$success-4, $alpha: 0.3),
+  $success-subtle:       color.change(scale.$success-4, $alpha: 0.12),
+
+  // warning: GitHub amber
+  $warning-fg:           scale.$warning-3,  // #c69026
+  $warning-emphasis:     scale.$warning-4,  // #966600
+  $warning-muted:        color.change(scale.$warning-4, $alpha: 0.3),
+  $warning-subtle:       color.change(scale.$warning-4, $alpha: 0.12),
+
+  // danger: GitHub red
+  $danger-fg:            scale.$danger-3,   // #e5534b
+  $danger-emphasis:      scale.$danger-4,   // #c93c37
+  $danger-muted:         color.change(scale.$danger-4, $alpha: 0.3),
+  $danger-subtle:        color.change(scale.$danger-4, $alpha: 0.12)
+);
+
+// dark mode — blue-gray is the canvas colour
+@forward "../target/atlantafx/styles/settings/config" with (
+  $darkMode: true
+);
+
+@use "../target/atlantafx/styles/general";
+
+// modify individual control settings
+@use "../target/atlantafx/styles/components";
