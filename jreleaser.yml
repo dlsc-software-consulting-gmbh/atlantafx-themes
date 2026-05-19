@@ -28,7 +28,7 @@ project:
 
 release:
   github:
-    branch: master
+    branch: main
     overwrite: true
     milestone:
       name: '{{projectVersion}}'
