@@ -93,8 +93,8 @@
   $border-muted:         scale.$base-6,   // #2e2e2e
   $border-subtle:        color.change(scale.$base-5, $alpha: 0.4),
 
-  $neutral-emphasisPlus: scale.$base-0,   // #f2f2f2
-  $neutral-emphasis:     scale.$base-2,   // #b0b0b0
+  $neutral-emphasisPlus: scale.$base-5,   // #484848 — 8.2:1 contrast against #f2f2f2 fg-emphasis
+  $neutral-emphasis:     scale.$base-4,   // #686868 — 5.0:1 contrast against #f2f2f2 fg-emphasis
   $neutral-muted:        color.change(scale.$base-4, $alpha: 0.4),
   $neutral-subtle:       color.change(scale.$base-7, $alpha: 0.6),
 

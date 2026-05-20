@@ -90,8 +90,8 @@
   $border-muted:         scale.$base-6,
   $border-subtle:        scale.$base-7,
 
-  $neutral-emphasisPlus: scale.$base-2,
-  $neutral-emphasis:     scale.$base-3,
+  $neutral-emphasisPlus: scale.$base-6,   // #2a4260 — 10.3:1 contrast against white fg-emphasis
+  $neutral-emphasis:     scale.$base-5,   // #3d5a73 — 7.2:1 contrast against white fg-emphasis
   $neutral-muted:        scale.$base-5,
   $neutral-subtle:       scale.$base-7,
 

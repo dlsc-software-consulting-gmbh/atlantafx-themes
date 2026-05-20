@@ -103,7 +103,7 @@
 
   // success: warm teal-green
   $success-fg:           scale.$success-3,
-  $success-emphasis:     scale.$success-4,  // #4b916d
+  $success-emphasis:     scale.$success-3,  // #74c097 — 6.8:1 contrast against dark fg-onEmphasis
   $success-muted:        color.change(scale.$success-4, $alpha: 0.3),
   $success-subtle:       color.change(scale.$success-4, $alpha: 0.12),
 
@@ -115,7 +115,7 @@
 
   // danger: hot pink (#ed1566)
   $danger-fg:            scale.$danger-3,
-  $danger-emphasis:      scale.$danger-5,   // #ed1566
+  $danger-emphasis:      scale.$danger-3,   // #ef80bc — 5.9:1 contrast against dark fg-onEmphasis
   $danger-muted:         color.change(scale.$danger-5, $alpha: 0.3),
   $danger-subtle:        color.change(scale.$danger-5, $alpha: 0.12)
 );

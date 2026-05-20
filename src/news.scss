@@ -90,8 +90,8 @@
   $border-muted:         scale.$base-6,   // --bg-elevated (subtle dividers)
   $border-subtle:        scale.$base-7,
 
-  $neutral-emphasisPlus: scale.$base-0,
-  $neutral-emphasis:     scale.$base-1,
+  $neutral-emphasisPlus: scale.$base-4,   // #475569 — 7.6:1 contrast against white fg-emphasis
+  $neutral-emphasis:     scale.$base-3,   // #64748b — 4.8:1 contrast against white fg-emphasis
   $neutral-muted:        scale.$base-3,
   $neutral-subtle:       scale.$base-6,
 
