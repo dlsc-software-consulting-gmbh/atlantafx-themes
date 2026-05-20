@@ -90,10 +90,10 @@
   $border-muted:         scale.$base-6,
   $border-subtle:        scale.$base-7,
 
-  $neutral-emphasisPlus: scale.$base-0,
-  $neutral-emphasis:     scale.$base-2,
-  $neutral-muted:        scale.$base-4,
-  $neutral-subtle:       scale.$base-7,
+  $neutral-emphasisPlus: scale.$base-5,
+  $neutral-emphasis:     scale.$base-4,
+  $neutral-muted:        color.change(scale.$base-3, $alpha: 0.4),
+  $neutral-subtle:       color.change(scale.$base-7, $alpha: 0.6),
 
   // accent: blue
   $accent-fg:            scale.$accent-4,  // #4493f8

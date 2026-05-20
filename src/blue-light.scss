@@ -1,6 +1,6 @@
 @use "sass:color";
 
-/* WIP light theme
+/* Blue light theme
  * Primary blue #004273 - Brand red #DC2F34 - Light mode
  */
 
@@ -39,7 +39,7 @@
   $success-2: #82d1b8,
   $success-3: #4dba99,
   $success-4: #1ea17f,
-  $success-5: #158569,
+  $success-5: #008458,
   $success-6: #0e6b55,
   $success-7: #095243,
   $success-8: #063b30,
@@ -53,7 +53,7 @@
   $warning-4: #ecac10,
   $warning-5: #c78e00,
   $warning-6: #9e7000,
-  $warning-7: #775500,
+  $warning-7: #9e6900,
   $warning-8: #523b00,
   $warning-9: #2e2100,
 
@@ -63,7 +63,7 @@
   $danger-2: #f39499,
   $danger-3: #ec6368,
   $danger-4: #e23e44,
-  $danger-5: #dc2f34,  // brand red
+  $danger-5: #e50007,  // brand red — pure saturated red
   $danger-6: #b82428,
   $danger-7: #921b1e,
   $danger-8: #6c1315,
@@ -77,7 +77,7 @@
   // dark grey-blue text on white canvas
   $fg-default:           scale.$base-9,
   $fg-muted:             scale.$base-6,
-  $fg-subtle:            scale.$base-4,
+  $fg-subtle:            scale.$base-5,
   $fg-onEmphasis:        scale.$light,   // white on filled blue/red elements
 
   // white canvas with light blue-grey insets
@@ -103,13 +103,13 @@
 
   // success: teal-green
   $success-fg:           scale.$success-5,
-  $success-emphasis:     scale.$success-4,
+  $success-emphasis:     scale.$success-5,  // #158569 — 4.6:1 with white fg-onEmphasis
   $success-muted:        color.change(scale.$success-3, $alpha: 0.4),
   $success-subtle:       scale.$success-0,
 
   // warning: amber
-  $warning-fg:           scale.$warning-5,
-  $warning-emphasis:     scale.$warning-4,
+  $warning-fg:           scale.$warning-7,  // #775500 — 6.8:1 on white canvas
+  $warning-emphasis:     scale.$warning-7,  // #775500 — 6.8:1 with white fg-onEmphasis
   $warning-muted:        color.change(scale.$warning-3, $alpha: 0.4),
   $warning-subtle:       scale.$warning-0,
 

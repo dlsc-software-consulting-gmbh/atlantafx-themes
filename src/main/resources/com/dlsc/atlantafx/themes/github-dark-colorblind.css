@@ -63,10 +63,10 @@
   -color-border-muted: #21262d;
   -color-border-subtle: #161b22;
   -color-shadow-default: #8b949e;
-  -color-neutral-emphasis-plus: #f0f6fc;
-  -color-neutral-emphasis: #8b949e;
-  -color-neutral-muted: #484f58;
-  -color-neutral-subtle: #161b22;
+  -color-neutral-emphasis-plus: #3d444d;
+  -color-neutral-emphasis: #484f58;
+  -color-neutral-muted: rgba(110, 119, 129, 0.4);
+  -color-neutral-subtle: rgba(22, 27, 34, 0.6);
   -color-accent-fg: #4493f8;
   -color-accent-emphasis: #1f6feb;
   -color-accent-muted: rgba(56, 139, 253, 0.2);

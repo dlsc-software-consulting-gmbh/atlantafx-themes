@@ -1,6 +1,6 @@
 @use "sass:color";
 
-/* WIP dark theme
+/* Blue dark theme
  * Primary blue #004273 - Brand red #DC2F34 - Dark mode
  */
 
@@ -78,7 +78,7 @@
   $fg-default:           scale.$base-0,
   $fg-muted:             scale.$base-1,
   $fg-subtle:            scale.$base-3,
-  $fg-onEmphasis:        scale.$light,
+  $fg-onEmphasis:        scale.$dark,       // #0a1530 — dark navy on bright emphasis fills
 
   // dark navy canvas
   $canvas-default:       scale.$base-8,   // #142342
@@ -90,14 +90,14 @@
   $border-muted:         scale.$base-6,
   $border-subtle:        scale.$base-7,
 
-  $neutral-emphasisPlus: scale.$base-6,   // #2a4260 — 10.3:1 contrast against white fg-emphasis
-  $neutral-emphasis:     scale.$base-5,   // #3d5a73 — 7.2:1 contrast against white fg-emphasis
+  $neutral-emphasisPlus: scale.$base-2,   // #c3cdd9 — 11.2:1 against dark fg-onEmphasis
+  $neutral-emphasis:     scale.$base-3,   // #8fa3b8 — 7.0:1 against dark fg-onEmphasis
   $neutral-muted:        scale.$base-5,
   $neutral-subtle:       scale.$base-7,
 
   // accent: lighter brand blue for readability on dark canvas
   $accent-fg:            scale.$accent-3,   // #5aabdc — readable on dark
-  $accent-emphasis:      scale.$accent-4,   // #1a7ab8 — filled buttons/badges
+  $accent-emphasis:      scale.$accent-3,   // #5aabdc — 7.1:1 against dark fg-onEmphasis
   $accent-muted:         color.change(scale.$accent-4, $alpha: 0.3),
   $accent-subtle:        color.change(scale.$accent-5, $alpha: 0.15),
 
@@ -115,7 +115,7 @@
 
   // danger: lighter brand red for readable text on dark canvas
   $danger-fg:            scale.$danger-2,   // #f39499 — light on dark
-  $danger-emphasis:      scale.$danger-5,   // #dc2f34 — filled elements
+  $danger-emphasis:      scale.$danger-3,   // #ec6368 — 5.6:1 against dark fg-onEmphasis
   $danger-muted:         color.change(scale.$danger-5, $alpha: 0.3),
   $danger-subtle:        color.change(scale.$danger-5, $alpha: 0.12)
 );

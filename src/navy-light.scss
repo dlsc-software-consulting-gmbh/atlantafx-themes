@@ -102,20 +102,20 @@
   $accent-subtle:        scale.$accent-0,   // #eef0f6 light blue-grey background
 
   // success: muted green
-  $success-fg:           scale.$success-5,
-  $success-emphasis:     scale.$success-4,
+  $success-fg:           scale.$success-7,
+  $success-emphasis:     scale.$success-6,
   $success-muted:        color.change(scale.$success-3, $alpha: 0.4),
   $success-subtle:       scale.$success-0,
 
   // warning: amber
-  $warning-fg:           scale.$warning-6,
-  $warning-emphasis:     scale.$warning-4,
+  $warning-fg:           scale.$warning-7,
+  $warning-emphasis:     scale.$warning-7,
   $warning-muted:        color.change(scale.$warning-3, $alpha: 0.4),
   $warning-subtle:       scale.$warning-0,
 
   // danger: crimson
-  $danger-fg:            scale.$danger-5,
-  $danger-emphasis:      scale.$danger-4,
+  $danger-fg:            scale.$danger-6,
+  $danger-emphasis:      scale.$danger-5,
   $danger-muted:         color.change(scale.$danger-3, $alpha: 0.4),
   $danger-subtle:        scale.$danger-0
 );

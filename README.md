@@ -22,8 +22,8 @@ Clone the repository and use it as a starting point for your own theme.
 | `navy-dark.scss` | `NavyDark` | dark | Dark navy canvas, gold accent |
 | `navy-light.scss` | `NavyLight` | light | White canvas, navy accent |
 | `news.scss` | `News` | dark | Slate canvas, indigo accent, teal success |
-| `wip-dark.scss` | `WipDark` | dark | Work-in-progress dark theme — primary blue, brand red |
-| `wip-light.scss` | `WipLight` | light | Work-in-progress light theme — primary blue, brand red |
+| `blue-dark.scss` | `BlueDark` | dark | Blue dark theme — primary blue, brand red |
+| `blue-light.scss` | `BlueLight` | light | Blue light theme — primary blue, brand red |
 | `yacht.scss` | `Yacht` | light | Linen canvas, ocean teal accent, brass/rust warning, sea green success, maritime red danger |
 
 Compiled CSS files are written to `src/main/resources/com/dlsc/atlantafx/themes/`.

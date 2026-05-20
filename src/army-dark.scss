@@ -100,25 +100,25 @@
 
   // accent: tactical green
   $accent-fg:            scale.$accent-3,  // #7daa2a
-  $accent-emphasis:      scale.$accent-4,  // #5e8618
+  $accent-emphasis:      scale.$accent-2,  // #b2d848 — 11.6:1 against dark fg-onEmphasis
   $accent-muted:         color.change(scale.$accent-4, $alpha: 0.3),
   $accent-subtle:        color.change(scale.$accent-4, $alpha: 0.12),
 
   // success: forest green
-  $success-fg:           scale.$success-3,  // #3a8a22
-  $success-emphasis:     scale.$success-4,  // #2c6c18
+  $success-fg:           scale.$success-2,  // #72cc48 — 8.1:1 on bg-default #1c2214
+  $success-emphasis:     scale.$success-2,  // #72cc48 — 9.4:1 against dark fg-onEmphasis
   $success-muted:        color.change(scale.$success-4, $alpha: 0.3),
   $success-subtle:       color.change(scale.$success-4, $alpha: 0.12),
 
   // warning: desert amber
   $warning-fg:           scale.$warning-3,  // #c8900c
-  $warning-emphasis:     scale.$warning-4,  // #9e6c04
+  $warning-emphasis:     scale.$warning-2,  // #f0c028 — 11.1:1 against dark fg-onEmphasis
   $warning-muted:        color.change(scale.$warning-4, $alpha: 0.3),
   $warning-subtle:       color.change(scale.$warning-4, $alpha: 0.12),
 
   // danger: military red
-  $danger-fg:            scale.$danger-3,   // #cc3318
-  $danger-emphasis:      scale.$danger-4,   // #a82410
+  $danger-fg:            scale.$danger-2,   // #f88068 — 6.4:1 on bg-default #1c2214
+  $danger-emphasis:      scale.$danger-2,   // #f88068 — 7.5:1 against dark fg-onEmphasis
   $danger-muted:         color.change(scale.$danger-4, $alpha: 0.3),
   $danger-subtle:        color.change(scale.$danger-4, $alpha: 0.12)
 );

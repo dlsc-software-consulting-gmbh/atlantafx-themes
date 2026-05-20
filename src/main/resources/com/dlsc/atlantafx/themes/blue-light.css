@@ -26,7 +26,7 @@
   -color-success-2: #82d1b8;
   -color-success-3: #4dba99;
   -color-success-4: #1ea17f;
-  -color-success-5: #158569;
+  -color-success-5: #008458;
   -color-success-6: #0e6b55;
   -color-success-7: #095243;
   -color-success-8: #063b30;
@@ -38,7 +38,7 @@
   -color-warning-4: #ecac10;
   -color-warning-5: #c78e00;
   -color-warning-6: #9e7000;
-  -color-warning-7: #775500;
+  -color-warning-7: #9e6900;
   -color-warning-8: #523b00;
   -color-warning-9: #2e2100;
   -color-danger-0: #fde8e9;
@@ -46,14 +46,14 @@
   -color-danger-2: #f39499;
   -color-danger-3: #ec6368;
   -color-danger-4: #e23e44;
-  -color-danger-5: #dc2f34;
+  -color-danger-5: #e50007;
   -color-danger-6: #b82428;
   -color-danger-7: #921b1e;
   -color-danger-8: #6c1315;
   -color-danger-9: #450c0d;
   -color-fg-default: #0a1530;
   -color-fg-muted: #2a4260;
-  -color-fg-subtle: #5e7a95;
+  -color-fg-subtle: #3d5a73;
   -color-fg-emphasis: #ffffff;
   -color-bg-default: #ffffff;
   -color-bg-overlay: #ffffff;
@@ -71,16 +71,16 @@
   -color-accent-emphasis: #004273;
   -color-accent-muted: rgba(0, 66, 115, 0.3);
   -color-accent-subtle: #ebf3fa;
-  -color-warning-fg: #c78e00;
-  -color-warning-emphasis: #ecac10;
+  -color-warning-fg: #9e6900;
+  -color-warning-emphasis: #9e6900;
   -color-warning-muted: rgba(245, 196, 78, 0.4);
   -color-warning-subtle: #fff8e6;
-  -color-success-fg: #158569;
-  -color-success-emphasis: #1ea17f;
+  -color-success-fg: #008458;
+  -color-success-emphasis: #008458;
   -color-success-muted: rgba(77, 186, 153, 0.4);
   -color-success-subtle: #e6f5f0;
-  -color-danger-fg: #dc2f34;
-  -color-danger-emphasis: #dc2f34;
+  -color-danger-fg: #e50007;
+  -color-danger-emphasis: #e50007;
   -color-danger-muted: rgba(236, 99, 104, 0.4);
   -color-danger-subtle: #fde8e9;
   -color-chart-1: #f3622d;
@@ -4667,6 +4667,6 @@ Add support for NO_HEADER tweak in tables .table-view.no-header > .column-header
   -fx-effect: dropshadow(three-pass-box, -color-shadow-default, 6px, 0.3, 0, 2);
 }
 
-/* WIP light theme
+/* Blue light theme
  * Primary blue #004273 - Brand red #DC2F34 - Light mode
  */

@@ -91,7 +91,7 @@
   $border-subtle:        scale.$base-2,   // #d8dee4
 
   $neutral-emphasisPlus: scale.$base-9,
-  $neutral-emphasis:     scale.$base-5,
+  $neutral-emphasis:     scale.$base-8,
   $neutral-muted:        color.change(scale.$base-4, $alpha: 0.2),
   $neutral-subtle:       color.change(scale.$base-1, $alpha: 0.5),
 
@@ -102,19 +102,19 @@
   $accent-subtle:        scale.$accent-0,  // #ddf4ff
 
   // success: blue (replaces green — distinct from amber warning for tritanopia)
-  $success-fg:           scale.$success-5,  // #0969da
+  $success-fg:           scale.$success-6,  // #0550ae
   $success-emphasis:     scale.$success-5,  // #0969da
   $success-muted:        color.change(scale.$success-5, $alpha: 0.4),
   $success-subtle:       scale.$success-0,  // #ddf4ff
 
   // warning: amber
-  $warning-fg:           scale.$warning-5,  // #9a6700
+  $warning-fg:           scale.$warning-6,  // #7d4e00
   $warning-emphasis:     scale.$warning-5,  // #9a6700
   $warning-muted:        color.change(scale.$warning-5, $alpha: 0.4),
   $warning-subtle:       scale.$warning-0,  // #fff8c5
 
   // danger: red (distinguishable from amber warning for tritanopia users)
-  $danger-fg:            scale.$danger-5,   // #cf222e (≈ fgColor-danger #d1242f)
+  $danger-fg:            scale.$danger-6,   // #a40e26
   $danger-emphasis:      scale.$danger-5,   // #cf222e
   $danger-muted:         color.change(scale.$danger-5, $alpha: 0.4),
   $danger-subtle:        scale.$danger-0    // #ffebe9

@@ -54,7 +54,7 @@
   -color-fg-default: #f4f6f9;
   -color-fg-muted: #e3e8f0;
   -color-fg-subtle: #8fa3b8;
-  -color-fg-emphasis: #ffffff;
+  -color-fg-emphasis: #0a1530;
   -color-bg-default: #142342;
   -color-bg-overlay: #1d3050;
   -color-bg-subtle: #1d3050;
@@ -63,12 +63,12 @@
   -color-border-muted: #2a4260;
   -color-border-subtle: #1d3050;
   -color-shadow-default: #c3cdd9;
-  -color-neutral-emphasis-plus: #2a4260;
-  -color-neutral-emphasis: #3d5a73;
+  -color-neutral-emphasis-plus: #c3cdd9;
+  -color-neutral-emphasis: #8fa3b8;
   -color-neutral-muted: #3d5a73;
   -color-neutral-subtle: #1d3050;
   -color-accent-fg: #5aabdc;
-  -color-accent-emphasis: #1a7ab8;
+  -color-accent-emphasis: #5aabdc;
   -color-accent-muted: rgba(26, 122, 184, 0.3);
   -color-accent-subtle: rgba(0, 66, 115, 0.15);
   -color-warning-fg: #fad98a;
@@ -80,7 +80,7 @@
   -color-success-muted: rgba(30, 161, 127, 0.3);
   -color-success-subtle: rgba(30, 161, 127, 0.12);
   -color-danger-fg: #f39499;
-  -color-danger-emphasis: #dc2f34;
+  -color-danger-emphasis: #ec6368;
   -color-danger-muted: rgba(220, 47, 52, 0.3);
   -color-danger-subtle: rgba(220, 47, 52, 0.12);
   -color-chart-1: #f3622d;
@@ -4667,6 +4667,6 @@ Add support for NO_HEADER tweak in tables .table-view.no-header > .column-header
   -fx-effect: dropshadow(three-pass-box, -color-shadow-default, 8px, 0.6, 0, 2);
 }
 
-/* WIP dark theme
+/* Blue dark theme
  * Primary blue #004273 - Brand red #DC2F34 - Dark mode
  */
