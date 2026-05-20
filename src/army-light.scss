@@ -1,0 +1,132 @@
+@use "sass:color";
+
+/* Army Light - light theme (military/army)
+ * Canvas: #e8eccc (light khaki) - Neutral: #6b7040 (olive drab) - Accent: #7daa2a (tactical green)
+ * Danger: #cc3318 (military red) - Warning: #c8900c (desert amber) - Success: #3a8a22 (forest green)
+ */
+
+// modify color scale
+@forward "../target/atlantafx/styles/settings/color-scale" with (
+
+  $dark:    #0e1208,   // deepest olive — fg-default
+  $light:   #e8eccc,   // lightest khaki — canvas-default
+
+  // base — olive-khaki neutrals (0 = near canvas, 9 = deepest olive fg)
+  $base-0:  #d4d8b0,   // canvas-inset / canvas-subtle
+  $base-1:  #b8bc8c,
+  $base-2:  #9c9e68,
+  $base-3:  #888a50,
+  $base-4:  #757848,
+  $base-5:  #6b7040,   // neutral — olive drab (border-default)
+  $base-6:  #4e5228,   // border-muted / fg-subtle
+  $base-7:  #383a1a,   // fg-muted
+  $base-8:  #1c2214,
+  $base-9:  #0e1208,   // == $dark — deepest olive
+
+  // accent — tactical green (#7daa2a at position 3; positions 5-6 used as light-mode fg)
+  $accent-0: #eef5c0,
+  $accent-1: #d4ec80,
+  $accent-2: #b2d848,
+  $accent-3: #7daa2a,
+  $accent-4: #5e8618,
+  $accent-5: #486610,   // accent-fg for light mode
+  $accent-6: #344808,
+  $accent-7: #242e04,
+  $accent-8: #141a02,
+  $accent-9: #080c00,
+
+  // success — forest green (#3a8a22 at position 3; position 5 used as light-mode fg)
+  $success-0: #d4f0c0,
+  $success-1: #a8e080,
+  $success-2: #72cc48,
+  $success-3: #3a8a22,
+  $success-4: #2c6c18,
+  $success-5: #205010,   // success-fg for light mode
+  $success-6: #163808,
+  $success-7: #0e2404,
+  $success-8: #081402,
+  $success-9: #040a00,
+
+  // warning — desert amber (#c8900c at position 3; position 5 used as light-mode fg)
+  $warning-0: #fdf0c0,
+  $warning-1: #f8dc70,
+  $warning-2: #f0c028,
+  $warning-3: #c8900c,
+  $warning-4: #9e6c04,
+  $warning-5: #7a5200,   // warning-fg for light mode
+  $warning-6: #5c3c00,
+  $warning-7: #402800,
+  $warning-8: #281800,
+  $warning-9: #140c00,
+
+  // danger — military red (#cc3318 at position 3; position 5 used as light-mode fg)
+  $danger-0: #ffded8,
+  $danger-1: #ffb0a0,
+  $danger-2: #f88068,
+  $danger-3: #cc3318,
+  $danger-4: #a82410,
+  $danger-5: #801808,   // danger-fg for light mode
+  $danger-6: #5c1006,
+  $danger-7: #3e0802,
+  $danger-8: #240400,
+  $danger-9: #120200
+);
+
+@use "../target/atlantafx/styles/settings/color-scale" as scale;
+
+// modify functional colors
+@forward "../target/atlantafx/styles/settings/color-vars" with (
+
+  // text: deep olive on light khaki canvas
+  $fg-default:           scale.$dark,        // #0e1208 — deepest olive
+  $fg-muted:             scale.$base-7,      // #383a1a
+  $fg-subtle:            scale.$base-6,      // #4e5228
+  $fg-onEmphasis:        scale.$light,       // #e8eccc — khaki text on emphasis fills
+
+  // canvas: layered light khaki backgrounds
+  $canvas-default:       scale.$light,       // #e8eccc — primary light khaki
+  $canvas-overlay:       scale.$light,       // #e8eccc — elevated panels
+  $canvas-inset:         scale.$base-0,      // #d4d8b0 — recessed / sidebar
+  $canvas-subtle:        scale.$base-0,      // #d4d8b0 — slightly recessed surface
+
+  $border-default:       scale.$base-5,      // #6b7040 — olive drab
+  $border-muted:         scale.$base-3,      // #888a50
+  $border-subtle:        scale.$base-2,      // #9c9e68
+
+  $neutral-emphasisPlus: scale.$dark,        // #0e1208
+  $neutral-emphasis:     scale.$base-7,      // #383a1a
+  $neutral-muted:        color.change(scale.$base-5, $alpha: 0.3),
+  $neutral-subtle:       color.change(scale.$base-0, $alpha: 0.5),
+
+  // accent: tactical green (darker position for light background)
+  $accent-fg:            scale.$accent-5,    // #486610
+  $accent-emphasis:      scale.$accent-5,    // #486610
+  $accent-muted:         color.change(scale.$accent-4, $alpha: 0.4),
+  $accent-subtle:        scale.$accent-0,    // #eef5c0
+
+  // success: forest green (darker position for light background)
+  $success-fg:           scale.$success-5,   // #205010
+  $success-emphasis:     scale.$success-5,   // #205010
+  $success-muted:        color.change(scale.$success-3, $alpha: 0.4),
+  $success-subtle:       scale.$success-0,   // #d4f0c0
+
+  // warning: desert amber (darker position for light background)
+  $warning-fg:           scale.$warning-5,   // #7a5200
+  $warning-emphasis:     scale.$warning-5,   // #7a5200
+  $warning-muted:        color.change(scale.$warning-3, $alpha: 0.4),
+  $warning-subtle:       scale.$warning-0,   // #fdf0c0
+
+  // danger: military red (darker position for light background)
+  $danger-fg:            scale.$danger-5,    // #801808
+  $danger-emphasis:      scale.$danger-5,    // #801808
+  $danger-muted:         color.change(scale.$danger-3, $alpha: 0.4),
+  $danger-subtle:        scale.$danger-0     // #ffded8
+);
+
+// light mode
+@forward "../target/atlantafx/styles/settings/config" with (
+  $darkMode: false
+);
+
+@use "../target/atlantafx/styles/general";
+@use "../target/atlantafx/styles/components";

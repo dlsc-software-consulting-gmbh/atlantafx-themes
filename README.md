@@ -8,6 +8,8 @@ Clone the repository and use it as a starting point for your own theme.
 
 | File | Java class | Mode | Description |
 |---|---|---|---|
+| `army-dark.scss` | `ArmyDark` | dark | Dark olive canvas, olive drab neutral, tactical green accent, desert amber warning, forest green success, military red danger |
+| `army-light.scss` | `ArmyLight` | light | Light khaki canvas, olive drab neutral, tactical green accent, desert amber warning, forest green success, military red danger |
 | `autumn.scss` | `Autumn` | dark | Dark navy canvas, teal neutral, burnt orange accent, brick red danger, autumn gold warning, olive success |
 | `blacky.scss` | `Blacky` | dark | Pure black canvas, white foreground, amber accent, vivid red danger, golden yellow warning, bright green success |
 | `browny.scss` | `Browny` | dark | Warm chocolate canvas, gold accent, hot-pink danger |

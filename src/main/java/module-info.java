@@ -25,5 +25,7 @@ module com.dlsc.atlantafx.themes {
         com.dlsc.atlantafx.themes.Yacht,
         com.dlsc.atlantafx.themes.Seashell,
         com.dlsc.atlantafx.themes.Autumn,
-        com.dlsc.atlantafx.themes.Blacky;
+        com.dlsc.atlantafx.themes.Blacky,
+        com.dlsc.atlantafx.themes.ArmyDark,
+        com.dlsc.atlantafx.themes.ArmyLight;
 }

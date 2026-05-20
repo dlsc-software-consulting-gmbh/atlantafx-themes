@@ -3,7 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
+    <name>AtlantFX Themes</name>
     <groupId>com.dlsc.atlantafx</groupId>
     <artifactId>themes</artifactId>
     <packaging>jar</packaging>
@@ -14,6 +14,25 @@
         <artifactId>dlsc-maven-parent</artifactId>
         <version>1.6.0</version>
     </parent>
+
+    <organization>
+        <name>DLSC Software &amp; Consulting</name>
+        <url>https://www.dlsc.com</url>
+    </organization>
+
+    <developers>
+        <developer>
+            <name>Dirk Lemmermann</name>
+            <email>dlemmermann@gmail.com</email>
+            <roles>
+                <role>Developer</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <scm>
+        <url>https://github.com/dlemmermann/atlantfx-themes</url>
+    </scm>
 
     <properties>
         <java.version>21</java.version>
@@ -96,15 +115,23 @@
                         <arg>${scss.inputDir}/wip-dark.scss:${css.outputDir}/wip-dark.css</arg>
                         <arg>${scss.inputDir}/github-soft-dark.scss:${css.outputDir}/github-soft-dark.css</arg>
                         <arg>${scss.inputDir}/github-light-default.scss:${css.outputDir}/github-light-default.css</arg>
-                        <arg>${scss.inputDir}/github-dark-colorblind.scss:${css.outputDir}/github-dark-colorblind.css</arg>
-                        <arg>${scss.inputDir}/github-light-colorblind.scss:${css.outputDir}/github-light-colorblind.css</arg>
-                        <arg>${scss.inputDir}/github-dark-tritanopia.scss:${css.outputDir}/github-dark-tritanopia.css</arg>
-                        <arg>${scss.inputDir}/github-light-tritanopia.scss:${css.outputDir}/github-light-tritanopia.css</arg>
+                        <arg>${scss.inputDir}/github-dark-colorblind.scss:${css.outputDir}/github-dark-colorblind.css
+                        </arg>
+                        <arg>
+                            ${scss.inputDir}/github-light-colorblind.scss:${css.outputDir}/github-light-colorblind.css
+                        </arg>
+                        <arg>${scss.inputDir}/github-dark-tritanopia.scss:${css.outputDir}/github-dark-tritanopia.css
+                        </arg>
+                        <arg>
+                            ${scss.inputDir}/github-light-tritanopia.scss:${css.outputDir}/github-light-tritanopia.css
+                        </arg>
                         <arg>${scss.inputDir}/graphite.scss:${css.outputDir}/graphite.css</arg>
                         <arg>${scss.inputDir}/yacht.scss:${css.outputDir}/yacht.css</arg>
                         <arg>${scss.inputDir}/seashell.scss:${css.outputDir}/seashell.css</arg>
                         <arg>${scss.inputDir}/autumn.scss:${css.outputDir}/autumn.css</arg>
                         <arg>${scss.inputDir}/blacky.scss:${css.outputDir}/blacky.css</arg>
+                        <arg>${scss.inputDir}/army-dark.scss:${css.outputDir}/army-dark.css</arg>
+                        <arg>${scss.inputDir}/army-light.scss:${css.outputDir}/army-light.css</arg>
                         <arg>--no-source-map</arg>
                     </args>
                 </configuration>
