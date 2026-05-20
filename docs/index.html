@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AtlantaFX Themes</title>
+  <meta name="description" content="A showcase of custom JavaFX CSS themes for the AtlantaFX framework — color palettes for dark and light modes.">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0 }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background-color: #0d1117;
+      background-image: radial-gradient(rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 28px 28px;
+      color: #c9d1d9;
+      line-height: 1.5;
+      min-height: 100vh;
+    }
+
+    a { color: #58a6ff; text-decoration: none }
+    a:hover { text-decoration: underline }
+
+    /* ── Header ────────────────────────────────────────── */
+    .site-header {
+      background: linear-gradient(175deg, #161b22 0%, rgba(13,17,23,0) 100%);
+      border-bottom: 1px solid #21262d;
+      padding: 4rem 2rem 2.5rem;
+      text-align: center;
+    }
+
+    .site-header h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #e6edf3;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.625rem;
+    }
+
+    .site-header .subtitle {
+      color: #8b949e;
+      font-size: 1rem;
+      max-width: 560px;
+      margin: 0 auto 1.75rem;
+      line-height: 1.65;
+    }
+
+    .badge-row {
+      display: flex;
+      gap: 0.625rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .stat-badge {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 2rem;
+      padding: 0.3125rem 0.875rem;
+      font-size: 0.8125rem;
+      color: #8b949e;
+    }
+
+    .stat-badge strong { color: #58a6ff }
+
+    /* ── Main ──────────────────────────────────────────── */
+    .site-main {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    /* ── Toolbar ───────────────────────────────────────── */
+    .toolbar {
+      display: flex;
+      align-items: center;
+      gap: 0.875rem;
+      margin-bottom: 1.75rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-group {
+      display: flex;
+      gap: 0.25rem;
+      background: #161b22;
+      border: 1px solid #21262d;
+      border-radius: 9px;
+      padding: 0.25rem;
+    }
+
+    .filter-btn {
+      padding: 0.3125rem 0.875rem;
+      border: none;
+      border-radius: 6px;
+      background: transparent;
+      color: #8b949e;
+      cursor: pointer;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: background 0.12s, color 0.12s;
+    }
+
+    .filter-btn:hover { color: #e6edf3 }
+
+    .filter-btn.active {
+      background: #21262d;
+      color: #e6edf3;
+    }
+
+    .search-wrap { flex: 1; max-width: 300px }
+
+    .search-input {
+      width: 100%;
+      padding: 0.4375rem 0.875rem 0.4375rem 2.25rem;
+      border: 1px solid #30363d;
+      border-radius: 9px;
+      background: #0d1117;
+      color: #c9d1d9;
+      font-size: 0.875rem;
+      outline: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%236e7681' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: 0.625rem center;
+      transition: border-color 0.12s;
+    }
+
+    .search-input:focus { border-color: #388bfd }
+    .search-input::placeholder { color: #484f58 }
+
+    .result-count {
+      color: #6e7681;
+      font-size: 0.8125rem;
+      margin-left: auto;
+    }
+
+    /* ── Grid ──────────────────────────────────────────── */
+    .themes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .empty-state {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 4rem 2rem;
+      color: #484f58;
+      font-size: 1rem;
+    }
+
+    /* ── Card ──────────────────────────────────────────── */
+    .theme-card {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .theme-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 48px rgba(0,0,0,0.55) !important;
+    }
+
+    .card-body {
+      padding: 1.125rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.875rem;
+      flex: 1;
+    }
+
+    /* Card header row */
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .card-name {
+      font-size: 1.0625rem;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      line-height: 1.25;
+    }
+
+    .card-cls {
+      font-size: 0.6875rem;
+      font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+      opacity: 0.5;
+      margin-top: 0.1875rem;
+    }
+
+    .mode-pill {
+      flex-shrink: 0;
+      padding: 0.1875rem 0.5rem;
+      border-radius: 2rem;
+      font-size: 0.625rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* Description */
+    .card-desc {
+      font-size: 0.75rem;
+      opacity: 0.6;
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* Mini preview panel */
+    .card-preview {
+      border: 1px solid;
+      border-radius: 9px;
+      padding: 0.8125rem;
+      flex: 1;
+    }
+
+    .preview-heading {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      margin-bottom: 0.1875rem;
+    }
+
+    .preview-body {
+      font-size: 0.6875rem;
+      opacity: 0.58;
+      margin-bottom: 0.6875rem;
+      line-height: 1.4;
+    }
+
+    .preview-btns {
+      display: flex;
+      gap: 0.375rem;
+      flex-wrap: wrap;
+    }
+
+    .prev-btn {
+      padding: 0.25rem 0.625rem;
+      border-radius: 5px;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      cursor: default;
+      line-height: 1.4;
+      border: 1px solid transparent;
+    }
+
+    /* Swatch row */
+    .swatches-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.375rem;
+    }
+
+    .swatch-item { text-align: center }
+
+    .swatch-block {
+      height: 28px;
+      border-radius: 5px;
+      margin-bottom: 0.25rem;
+      cursor: pointer;
+      transition: transform 0.1s, filter 0.1s;
+      border: 1px solid rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .swatch-block:hover { transform: scaleY(1.18); filter: brightness(1.1) }
+    .swatch-block:active { transform: scaleY(0.95) }
+
+    .swatch-label {
+      font-size: 0.5625rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      opacity: 0.45;
+    }
+
+    /* Card footer */
+    .card-footer {
+      display: flex;
+      justify-content: flex-end;
+      padding-top: 0.125rem;
+    }
+
+    .card-link {
+      font-size: 0.6875rem;
+      opacity: 0.4;
+      transition: opacity 0.15s;
+    }
+
+    .card-link:hover { opacity: 0.8; text-decoration: none; border-bottom: 1px solid currentColor }
+
+    /* Hidden cards */
+    .theme-card[data-hidden="true"] { display: none }
+
+    /* ── Copied toast ──────────────────────────────────── */
+    #toast {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(4px);
+      background: #e6edf3;
+      color: #0d1117;
+      padding: 0.5rem 1.125rem;
+      border-radius: 2rem;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.15s, transform 0.15s;
+      z-index: 999;
+    }
+
+    #toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* ── Footer ────────────────────────────────────────── */
+    .site-footer {
+      border-top: 1px solid #21262d;
+      padding: 1.5rem 2rem;
+      text-align: center;
+      color: #6e7681;
+      font-size: 0.8125rem;
+      margin-top: 3rem;
+    }
+
+    /* ── Responsive ────────────────────────────────────── */
+    @media (max-width: 640px) {
+      .site-header { padding: 2.5rem 1.25rem 1.75rem }
+      .site-header h1 { font-size: 1.875rem }
+      .site-main { padding: 1.25rem }
+      .themes-grid { grid-template-columns: 1fr }
+      .search-wrap { max-width: 100%; flex: unset; width: 100% }
+      .result-count { display: none }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <h1>AtlantaFX Themes</h1>
+  <p class="subtitle">
+    Custom JavaFX CSS themes built on top of <a href="https://github.com/mkpaz/atlantafx">AtlantaFX</a>.
+    Each theme overrides the color scale, semantic tokens, and dark&hairsp;/&hairsp;light mode flag
+    without touching the upstream stylesheet.
+  </p>
+  <div class="badge-row" id="stats-row"></div>
+</header>
+
+<main class="site-main">
+  <div class="toolbar">
+    <div class="filter-group">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="dark">Dark</button>
+      <button class="filter-btn" data-filter="light">Light</button>
+    </div>
+    <div class="search-wrap">
+      <input class="search-input" id="search" type="search"
+             placeholder="Search themes…" autocomplete="off" aria-label="Search themes">
+    </div>
+    <span class="result-count" id="result-count"></span>
+  </div>
+  <div class="themes-grid" id="grid"></div>
+</main>
+
+<div id="toast">Copied!</div>
+
+<footer class="site-footer">
+  <a href="https://github.com/dlemmermann/atlantafx-themes">dlemmermann/atlantafx-themes</a>
+  &nbsp;·&nbsp;
+  Built on top of&nbsp;<a href="https://github.com/mkpaz/atlantafx">mkpaz/atlantafx</a>
+</footer>
+
+<script>
+/* ── Theme data ─────────────────────────────────────────────────────────────
+   bg     = bg-default (canvas)        bgS = bg-subtle
+   fg     = fg-default (text)          fgE = fg-emphasis (text on emphasis fills)
+   brd    = border-default
+   acc/accE = accent fg / emphasis     suc/sucE = success fg / emphasis
+   wrn/wrnE = warning fg / emphasis    dng/dngE = danger fg / emphasis
+   ──────────────────────────────────────────────────────────────────────── */
+const THEMES = [
+  {
+    id: 'army-dark', name: 'Army Dark', cls: 'ArmyDark', mode: 'dark',
+    desc: 'Dark olive canvas, olive drab neutral, tactical green accent, desert amber warning, forest green success, military red danger',
+    bg: '#1c2214', bgS: '#383a1a', fg: '#d4d8b0', fgE: '#0e1208', brd: '#6b7040',
+    acc: '#7daa2a', accE: '#5e8618', suc: '#3a8a22', wrn: '#c8900c', dng: '#cc3318',
+  },
+  {
+    id: 'army-light', name: 'Army Light', cls: 'ArmyLight', mode: 'light',
+    desc: 'Light khaki canvas, olive drab neutral, tactical green accent, desert amber warning, forest green success, military red danger',
+    bg: '#e8eccc', bgS: '#d4d8b0', fg: '#0e1208', fgE: '#e8eccc', brd: '#6b7040',
+    acc: '#486610', accE: '#486610', suc: '#205010', wrn: '#7a5200', dng: '#801808',
+  },
+  {
+    id: 'autumn', name: 'Autumn', cls: 'Autumn', mode: 'dark',
+    desc: 'Dark navy canvas, teal neutral, burnt orange accent, brick red danger, autumn gold warning, olive success',
+    bg: '#304c64', bgS: '#1e3a50', fg: '#b8dee9', fgE: '#1a2c3e', brd: '#48a0b8',
+    acc: '#f07040', accE: '#e2480c', suc: '#7aac3a', wrn: '#e8a020', dng: '#e85838',
+  },
+  {
+    id: 'blacky', name: 'Blacky', cls: 'Blacky', mode: 'dark',
+    desc: 'Pure black canvas, white foreground, amber accent, vivid red danger, golden yellow warning, bright green success',
+    bg: '#000000', bgS: '#1a1a1a', fg: '#f2f2f2', fgE: '#f2f2f2', brd: '#484848',
+    acc: '#D98C42', accE: '#b86e28', suc: '#44C46A', wrn: '#F0C030', dng: '#E2463D',
+  },
+  {
+    id: 'browny', name: 'Browny', cls: 'Browny', mode: 'dark',
+    desc: 'Warm chocolate canvas, gold accent, hot-pink danger',
+    bg: '#332524', bgS: '#3d2b24', fg: '#f5efe8', fgE: '#332524', brd: 'rgba(107,90,80,0.7)',
+    acc: '#f3da91', accE: '#edbd2d', suc: '#74c097', wrn: '#ffa98e', dng: '#ef80bc',
+  },
+  {
+    id: 'github-dark-colorblind', name: 'GitHub Dark Colorblind', cls: 'GithubDarkColorblind', mode: 'dark',
+    desc: 'GitHub Dark for Protanopia & Deuteranopia — blue accent, orange danger, blue success',
+    bg: '#0d1117', bgS: '#161b22', fg: '#f0f6fc', fgE: '#ffffff', brd: 'rgba(61,68,77,0.7)',
+    acc: '#4493f8', accE: '#1f6feb', suc: '#58a6ff', wrn: '#d29922', dng: '#f0883e',
+  },
+  {
+    id: 'github-dark-tritanopia', name: 'GitHub Dark Tritanopia', cls: 'GithubDarkTritanopia', mode: 'dark',
+    desc: 'GitHub Dark for Tritanopia — blue accent, blue success, red danger',
+    bg: '#0d1117', bgS: '#161b22', fg: '#f0f6fc', fgE: '#ffffff', brd: 'rgba(61,68,77,0.7)',
+    acc: '#4493f8', accE: '#1f6feb', suc: '#58a6ff', wrn: '#d29922', dng: '#f85149',
+  },
+  {
+    id: 'github-light-colorblind', name: 'GitHub Light Colorblind', cls: 'GithubLightColorblind', mode: 'light',
+    desc: 'GitHub Light for Protanopia & Deuteranopia — blue accent, orange danger, blue success',
+    bg: '#ffffff', bgS: '#f6f8fa', fg: '#1f2328', fgE: '#ffffff', brd: '#d1d9e0',
+    acc: '#0969da', accE: '#0969da', suc: '#0969da', wrn: '#9a6700', dng: '#bc4c00',
+  },
+  {
+    id: 'github-light-default', name: 'GitHub Light Default', cls: 'GithubLightDefault', mode: 'light',
+    desc: 'GitHub Light Default palette (Primer light)',
+    bg: '#ffffff', bgS: '#f6f8fa', fg: '#24292f', fgE: '#ffffff', brd: '#d0d7de',
+    acc: '#0969da', accE: '#0969da', suc: '#1a7f37', wrn: '#9a6700', dng: '#cf222e',
+  },
+  {
+    id: 'github-light-tritanopia', name: 'GitHub Light Tritanopia', cls: 'GithubLightTritanopia', mode: 'light',
+    desc: 'GitHub Light for Tritanopia — blue accent, blue success, red danger',
+    bg: '#ffffff', bgS: '#f6f8fa', fg: '#1f2328', fgE: '#ffffff', brd: '#d1d9e0',
+    acc: '#0969da', accE: '#0969da', suc: '#0969da', wrn: '#9a6700', dng: '#cf222e',
+  },
+  {
+    id: 'github-soft-dark', name: 'GitHub Soft Dark', cls: 'GithubSoftDark', mode: 'dark',
+    desc: 'GitHub Dark Dimmed palette (Primer dark_dimmed)',
+    bg: '#22272e', bgS: '#2d333b', fg: '#adbac7', fgE: '#cdd9e5', brd: 'rgba(68,76,86,0.7)',
+    acc: '#539bf5', accE: '#316dca', suc: '#57ab5a', wrn: '#c69026', dng: '#e5534b',
+  },
+  {
+    id: 'graphite', name: 'Graphite', cls: 'Graphite', mode: 'light',
+    desc: 'Warm cream canvas, muted blue-gray accent, soft pink danger, olive success',
+    bg: '#f5e9e7', bgS: '#f4f3f5', fg: '#1e1d23', fgE: '#f5e9e7', brd: '#c1c0c2',
+    acc: '#5b748c', accE: '#72889e', suc: '#837d68', wrn: '#a06a66', dng: '#c76c72',
+  },
+  {
+    id: 'navy-dark', name: 'Navy Dark', cls: 'NavyDark', mode: 'dark',
+    desc: 'Dark navy canvas, gold accent',
+    bg: '#1a2744', bgS: '#233057', fg: '#eef0f6', fgE: '#111b33', brd: 'rgba(86,98,133,0.7)',
+    acc: '#e8cf82', accE: '#c9a84c', suc: '#aaeaa0', wrn: '#f7db88', dng: '#f8a8af',
+  },
+  {
+    id: 'navy-light', name: 'Navy Light', cls: 'NavyLight', mode: 'light',
+    desc: 'White canvas, navy accent',
+    bg: '#ffffff', bgS: '#eef0f6', fg: '#111b33', fgE: '#ffffff', brd: '#a8b0c7',
+    acc: '#3d4f73', accE: '#3d4f73', suc: '#34882d', wrn: '#8c6518', dng: '#a01d24',
+  },
+  {
+    id: 'news', name: 'News', cls: 'News', mode: 'dark',
+    desc: 'Slate canvas, indigo accent, teal success',
+    bg: '#0f172a', bgS: '#1e293b', fg: '#f1f5f9', fgE: '#ffffff', brd: 'rgba(51,65,85,0.8)',
+    acc: '#818cf8', accE: '#6366f1', suc: '#5eead4', wrn: '#fcd34d', dng: '#fda4af',
+  },
+  {
+    id: 'seashell', name: 'Seashell', cls: 'Seashell', mode: 'light',
+    desc: 'Warm amber canvas, slate teal accent, teal success, copper-orange warning, mauve danger',
+    bg: '#f6c992', bgS: '#fbd4a5', fg: '#1c2e35', fgE: '#fde7c9', brd: '#98bed6',
+    acc: '#30525c', accE: '#30525c', suc: '#09a1a1', wrn: '#b86030', dng: '#8e4459',
+  },
+  {
+    id: 'wip-dark', name: 'WIP Dark', cls: 'WipDark', mode: 'dark',
+    desc: 'Work-in-progress dark theme — primary blue, brand red',
+    bg: '#142342', bgS: '#1d3050', fg: '#f4f6f9', fgE: '#ffffff', brd: 'rgba(94,122,149,0.7)',
+    acc: '#5aabdc', accE: '#1a7ab8', suc: '#82d1b8', wrn: '#fad98a', dng: '#f39499',
+  },
+  {
+    id: 'wip-light', name: 'WIP Light', cls: 'WipLight', mode: 'light',
+    desc: 'Work-in-progress light theme — primary blue, brand red',
+    bg: '#ffffff', bgS: '#f4f6f9', fg: '#0a1530', fgE: '#ffffff', brd: '#c3cdd9',
+    acc: '#004273', accE: '#004273', suc: '#158569', wrn: '#c78e00', dng: '#dc2f34',
+  },
+  {
+    id: 'yacht', name: 'Yacht', cls: 'Yacht', mode: 'light',
+    desc: 'Linen canvas, ocean teal accent, brass/rust warning, sea green success, maritime red danger',
+    bg: '#f2f0ef', bgS: '#f4f4f3', fg: '#262928', fgE: '#f2f0ef', brd: '#bbbdbc',
+    acc: '#245f73', accE: '#245f73', suc: '#2e7d5e', wrn: '#733e24', dng: '#8b2635',
+  },
+];
+
+/* ── Card renderer ────────────────────────────────────────────────────── */
+function swatches(t) {
+  const cols = [
+    ['acc', 'Accent'],
+    ['suc', 'Success'],
+    ['wrn', 'Warning'],
+    ['dng', 'Danger'],
+  ];
+  return cols.map(([k, label]) => `
+    <div class="swatch-item">
+      <div class="swatch-block"
+           style="background:${t[k]}"
+           title="${label}: ${t[k]}"
+           onclick="copyHex('${t[k]}')"></div>
+      <div class="swatch-label">${label}</div>
+    </div>`
+  ).join('');
+}
+
+function modePill(mode) {
+  const s = mode === 'dark'
+    ? 'background:rgba(0,0,0,0.38);color:rgba(255,255,255,0.62);border:1px solid rgba(255,255,255,0.1)'
+    : 'background:rgba(255,255,255,0.45);color:rgba(0,0,0,0.5);border:1px solid rgba(0,0,0,0.1)';
+  return `<span class="mode-pill" style="${s}">${mode}</span>`;
+}
+
+function cardHTML(t) {
+  const shadow = t.mode === 'dark' ? '0 3px 12px rgba(0,0,0,0.5)' : '0 3px 12px rgba(0,0,0,0.18)';
+  const srcUrl = `https://github.com/dlemmermann/atlantafx-themes/blob/main/src/${t.id}.scss`;
+  return `
+<article class="theme-card"
+         data-mode="${t.mode}"
+         data-search="${(t.name + ' ' + t.cls + ' ' + t.desc).toLowerCase()}"
+         style="background:${t.bg};color:${t.fg};border-color:${t.brd};box-shadow:${shadow}">
+  <div class="card-body">
+    <div class="card-header">
+      <div>
+        <div class="card-name">${t.name}</div>
+        <div class="card-cls">${t.cls}.java</div>
+      </div>
+      ${modePill(t.mode)}
+    </div>
+    <div class="card-desc">${t.desc}</div>
+    <div class="card-preview" style="background:${t.bgS};border-color:${t.brd}">
+      <div class="preview-heading">${t.name}</div>
+      <div class="preview-body">
+        Sample text on ${t.mode === 'dark' ? 'dark' : 'light'} canvas.
+        Borders, typography, and emphasis colors.
+      </div>
+      <div class="preview-btns">
+        <button class="prev-btn"
+                style="background:${t.accE};color:${t.fgE};border-color:transparent">
+          Primary
+        </button>
+        <button class="prev-btn"
+                style="background:transparent;color:${t.fg};border-color:${t.brd}">
+          Default
+        </button>
+      </div>
+    </div>
+    <div class="swatches-row">${swatches(t)}</div>
+    <div class="card-footer">
+      <a class="card-link" href="${srcUrl}" target="_blank" rel="noopener"
+         style="color:${t.fg}">View source ↗</a>
+    </div>
+  </div>
+</article>`;
+}
+
+/* ── Render all cards ─────────────────────────────────────────────────── */
+const grid = document.getElementById('grid');
+THEMES.forEach(t => grid.insertAdjacentHTML('beforeend', cardHTML(t)));
+
+/* ── Stats ────────────────────────────────────────────────────────────── */
+const dark  = THEMES.filter(t => t.mode === 'dark').length;
+const light = THEMES.filter(t => t.mode === 'light').length;
+document.getElementById('stats-row').innerHTML = `
+  <span class="stat-badge"><strong>${THEMES.length}</strong> themes</span>
+  <span class="stat-badge"><strong>${dark}</strong> dark</span>
+  <span class="stat-badge"><strong>${light}</strong> light</span>`;
+
+/* ── Filter + search ──────────────────────────────────────────────────── */
+let currentFilter = 'all';
+let currentSearch = '';
+
+function applyFilters() {
+  let visible = 0;
+  document.querySelectorAll('.theme-card').forEach(card => {
+    const modeOk   = currentFilter === 'all' || card.dataset.mode === currentFilter;
+    const searchOk = card.dataset.search.includes(currentSearch);
+    const show = modeOk && searchOk;
+    card.dataset.hidden = String(!show);
+    if (show) visible++;
+  });
+
+  // Update result count
+  const total = currentFilter === 'all' ? THEMES.length
+    : THEMES.filter(t => t.mode === currentFilter).length;
+  const countEl = document.getElementById('result-count');
+  if (currentSearch || currentFilter !== 'all') {
+    countEl.textContent = `${visible} of ${THEMES.length} themes`;
+  } else {
+    countEl.textContent = '';
+  }
+
+  // Empty state
+  let empty = grid.querySelector('.empty-state');
+  if (visible === 0) {
+    if (!empty) {
+      grid.insertAdjacentHTML('beforeend',
+        '<div class="empty-state">No themes match your search.</div>');
+    }
+  } else {
+    if (empty) empty.remove();
+  }
+}
+
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentFilter = btn.dataset.filter;
+    applyFilters();
+  });
+});
+
+document.getElementById('search').addEventListener('input', e => {
+  currentSearch = e.target.value.toLowerCase().trim();
+  applyFilters();
+});
+
+/* ── Clipboard copy ───────────────────────────────────────────────────── */
+let toastTimer = null;
+const toast = document.getElementById('toast');
+
+function copyHex(hex) {
+  if (!navigator.clipboard) return;
+  navigator.clipboard.writeText(hex).then(() => {
+    toast.textContent = `Copied ${hex}`;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('show'), 1800);
+  });
+}
+</script>
+</body>
+</html>
