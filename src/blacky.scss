@@ -1,0 +1,132 @@
+@use "sass:color";
+
+/* Blacky - dark theme
+ * Canvas: #000000 (black) - Foreground: #f2f2f2 (white) - Accent: #D98C42 (amber)
+ * Danger: #E2463D (red) - Warning: #F0C030 (golden yellow) - Success: #44C46A (green)
+ */
+
+// modify color scale
+@forward "../target/atlantafx/styles/settings/color-scale" with (
+
+  $dark:    #000000,   // canvas-default (pure black)
+  $light:   #f2f2f2,   // fg-default (near-white)
+
+  // base — neutral grays (0 = near-white fg, 9 = pure black canvas)
+  $base-0:  #f2f2f2,
+  $base-1:  #d4d4d4,
+  $base-2:  #b0b0b0,
+  $base-3:  #8c8c8c,
+  $base-4:  #686868,
+  $base-5:  #484848,   // border-default
+  $base-6:  #2e2e2e,   // border-muted
+  $base-7:  #1a1a1a,   // canvas-subtle
+  $base-8:  #0d0d0d,   // canvas-overlay
+  $base-9:  #000000,   // canvas-default (pure black)
+
+  // accent — amber (#D98C42 at position 3)
+  $accent-0: #fce8cc,
+  $accent-1: #f5cc88,
+  $accent-2: #ecb060,
+  $accent-3: #D98C42,   // accent-fg (given)
+  $accent-4: #b86e28,   // accent-emphasis
+  $accent-5: #8c5018,
+  $accent-6: #683a10,
+  $accent-7: #482608,
+  $accent-8: #2c1604,
+  $accent-9: #160a02,
+
+  // success — bright green (#44C46A at position 3)
+  $success-0: #d4f8e0,
+  $success-1: #a0ebb8,
+  $success-2: #6ed890,
+  $success-3: #44C46A,   // success-fg (chosen)
+  $success-4: #2e9e50,   // success-emphasis
+  $success-5: #237a3c,
+  $success-6: #18582c,
+  $success-7: #103a1e,
+  $success-8: #0a2214,
+  $success-9: #04100a,
+
+  // warning — golden yellow (#F0C030 at position 3)
+  $warning-0: #fef7cc,
+  $warning-1: #fce880,
+  $warning-2: #f8d940,
+  $warning-3: #F0C030,   // warning-fg (chosen)
+  $warning-4: #c89800,   // warning-emphasis
+  $warning-5: #9e7800,
+  $warning-6: #785a00,
+  $warning-7: #543e00,
+  $warning-8: #322400,
+  $warning-9: #181200,
+
+  // danger — vivid red (#E2463D at position 3)
+  $danger-0: #ffe0de,
+  $danger-1: #ffb4b0,
+  $danger-2: #f88480,
+  $danger-3: #E2463D,   // danger-fg (given)
+  $danger-4: #c03028,   // danger-emphasis
+  $danger-5: #961e18,
+  $danger-6: #6e1210,
+  $danger-7: #4a0a08,
+  $danger-8: #2a0504,
+  $danger-9: #140202
+);
+
+@use "../target/atlantafx/styles/settings/color-scale" as scale;
+
+// modify functional colors
+@forward "../target/atlantafx/styles/settings/color-vars" with (
+
+  // text: near-white on pure black
+  $fg-default:           scale.$base-0,   // #f2f2f2
+  $fg-muted:             scale.$base-1,   // #d4d4d4
+  $fg-subtle:            scale.$base-2,   // #b0b0b0
+  $fg-onEmphasis:        scale.$base-0,   // #f2f2f2 — white text on colored fills
+
+  // canvas: pure black with dark-gray surfaces
+  $canvas-default:       scale.$base-9,   // #000000
+  $canvas-overlay:       scale.$base-8,   // #0d0d0d
+  $canvas-inset:         scale.$base-7,   // #1a1a1a — brighter than canvas for depth
+  $canvas-subtle:        scale.$base-7,   // #1a1a1a
+
+  $border-default:       scale.$base-5,   // #484848
+  $border-muted:         scale.$base-6,   // #2e2e2e
+  $border-subtle:        color.change(scale.$base-5, $alpha: 0.4),
+
+  $neutral-emphasisPlus: scale.$base-0,   // #f2f2f2
+  $neutral-emphasis:     scale.$base-2,   // #b0b0b0
+  $neutral-muted:        color.change(scale.$base-4, $alpha: 0.4),
+  $neutral-subtle:       color.change(scale.$base-7, $alpha: 0.6),
+
+  // accent: amber
+  $accent-fg:            scale.$accent-3,  // #D98C42
+  $accent-emphasis:      scale.$accent-4,  // #b86e28
+  $accent-muted:         color.change(scale.$accent-3, $alpha: 0.3),
+  $accent-subtle:        color.change(scale.$accent-3, $alpha: 0.12),
+
+  // success: bright green
+  $success-fg:           scale.$success-3,  // #44C46A
+  $success-emphasis:     scale.$success-4,  // #2e9e50
+  $success-muted:        color.change(scale.$success-4, $alpha: 0.3),
+  $success-subtle:       color.change(scale.$success-4, $alpha: 0.12),
+
+  // warning: golden yellow
+  $warning-fg:           scale.$warning-3,  // #F0C030
+  $warning-emphasis:     scale.$warning-4,  // #c89800
+  $warning-muted:        color.change(scale.$warning-4, $alpha: 0.3),
+  $warning-subtle:       color.change(scale.$warning-4, $alpha: 0.12),
+
+  // danger: vivid red
+  $danger-fg:            scale.$danger-3,   // #E2463D
+  $danger-emphasis:      scale.$danger-4,   // #c03028
+  $danger-muted:         color.change(scale.$danger-4, $alpha: 0.3),
+  $danger-subtle:        color.change(scale.$danger-4, $alpha: 0.12)
+);
+
+// dark mode
+@forward "../target/atlantafx/styles/settings/config" with (
+  $darkMode: true
+);
+
+@use "../target/atlantafx/styles/general";
+@use "../target/atlantafx/styles/components";

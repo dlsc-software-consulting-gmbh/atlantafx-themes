@@ -100,6 +100,11 @@
                         <arg>${scss.inputDir}/github-light-colorblind.scss:${css.outputDir}/github-light-colorblind.css</arg>
                         <arg>${scss.inputDir}/github-dark-tritanopia.scss:${css.outputDir}/github-dark-tritanopia.css</arg>
                         <arg>${scss.inputDir}/github-light-tritanopia.scss:${css.outputDir}/github-light-tritanopia.css</arg>
+                        <arg>${scss.inputDir}/graphite.scss:${css.outputDir}/graphite.css</arg>
+                        <arg>${scss.inputDir}/yacht.scss:${css.outputDir}/yacht.css</arg>
+                        <arg>${scss.inputDir}/seashell.scss:${css.outputDir}/seashell.css</arg>
+                        <arg>${scss.inputDir}/autumn.scss:${css.outputDir}/autumn.css</arg>
+                        <arg>${scss.inputDir}/blacky.scss:${css.outputDir}/blacky.css</arg>
                         <arg>--no-source-map</arg>
                     </args>
                 </configuration>

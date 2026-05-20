@@ -1,0 +1,133 @@
+@use "sass:color";
+
+/* Graphite - light theme
+ * Canvas: #f5e9e7 - Neutral: #c1c0c2 - Accent: #8a9db1
+ * Success: #837d68 - Warning: #f5e9e7 - Danger: #ecc5c6
+ */
+
+// modify color scale
+@forward "../target/atlantafx/styles/settings/color-scale" with (
+
+  $dark:    #1e1d23,   // fg-default (darkest text)
+  $light:   #f5e9e7,   // canvas-default (given background)
+
+  // base — warm neutral gray (0 = lightest, 9 = darkest)
+  // #c1c0c2 anchors position 3
+  $base-0:  #f4f3f5,
+  $base-1:  #e3e2e4,
+  $base-2:  #d2d1d3,
+  $base-3:  #c1c0c2,   // given neutral
+  $base-4:  #a6a5a7,
+  $base-5:  #8b8a8d,
+  $base-6:  #706f73,
+  $base-7:  #555459,
+  $base-8:  #3a393e,
+  $base-9:  #1e1d23,
+
+  // accent — muted blue-gray (#8a9db1 anchors position 4)
+  $accent-0: #eef1f5,
+  $accent-1: #d5dde7,
+  $accent-2: #bccad8,
+  $accent-3: #a3b7ca,
+  $accent-4: #8a9db1,   // given accent
+  $accent-5: #72889e,
+  $accent-6: #5b748c,
+  $accent-7: #45607a,
+  $accent-8: #2f4c68,
+  $accent-9: #1a3856,
+
+  // success — warm olive / taupe (#837d68 anchors position 5)
+  $success-0: #f2f0ec,
+  $success-1: #e0ddd4,
+  $success-2: #cdc9be,
+  $success-3: #b9b5a8,
+  $success-4: #9e998b,
+  $success-5: #837d68,   // given success
+  $success-6: #6b6552,
+  $success-7: #544e3d,
+  $success-8: #3d382b,
+  $success-9: #27221a,
+
+  // warning — warm peach (#f5e9e7 anchors position 1)
+  $warning-0: #fdf8f7,
+  $warning-1: #f5e9e7,   // given warning (same as canvas)
+  $warning-2: #e8d3d0,
+  $warning-3: #d9bbb8,
+  $warning-4: #c9a09c,
+  $warning-5: #b68480,
+  $warning-6: #a06a66,
+  $warning-7: #87504d,
+  $warning-8: #6d3835,
+  $warning-9: #52211f,
+
+  // danger — soft pink (#ecc5c6 anchors position 3)
+  $danger-0: #fdf4f5,
+  $danger-1: #f8e6e7,
+  $danger-2: #f2d5d6,
+  $danger-3: #ecc5c6,   // given danger
+  $danger-4: #e3adb0,
+  $danger-5: #d78e92,
+  $danger-6: #c76c72,
+  $danger-7: #b04b52,
+  $danger-8: #912e35,
+  $danger-9: #6e151c
+);
+
+@use "../target/atlantafx/styles/settings/color-scale" as scale;
+
+// modify functional colors
+@forward "../target/atlantafx/styles/settings/color-vars" with (
+
+  // text: dark on warm cream canvas
+  $fg-default:           scale.$dark,        // #1e1d23
+  $fg-muted:             scale.$base-7,      // #555459
+  $fg-subtle:            scale.$base-6,      // #706f73
+  $fg-onEmphasis:        scale.$light,       // #f5e9e7 — warm cream text on emphasis fills
+
+  // canvas: warm cream with neutral insets
+  $canvas-default:       scale.$light,       // #f5e9e7
+  $canvas-overlay:       scale.$light,       // #f5e9e7
+  $canvas-inset:         scale.$base-0,      // #f4f3f5
+  $canvas-subtle:        scale.$base-0,      // #f4f3f5
+
+  $border-default:       scale.$base-3,      // #c1c0c2 — given neutral
+  $border-muted:         scale.$base-1,      // #e3e2e4
+  $border-subtle:        scale.$base-2,      // #d2d1d3
+
+  $neutral-emphasisPlus: scale.$base-9,      // #1e1d23
+  $neutral-emphasis:     scale.$base-5,      // #8b8a8d
+  $neutral-muted:        color.change(scale.$base-4, $alpha: 0.2),
+  $neutral-subtle:       color.change(scale.$base-1, $alpha: 0.5),
+
+  // accent: muted blue-gray
+  $accent-fg:            scale.$accent-6,    // #5b748c
+  $accent-emphasis:      scale.$accent-5,    // #72889e
+  $accent-muted:         color.change(scale.$accent-4, $alpha: 0.4),
+  $accent-subtle:        scale.$accent-0,    // #eef1f5
+
+  // success: warm olive / taupe
+  $success-fg:           scale.$success-5,   // #837d68 — given success
+  $success-emphasis:     scale.$success-4,   // #9e998b
+  $success-muted:        color.change(scale.$success-4, $alpha: 0.4),
+  $success-subtle:       scale.$success-0,   // #f2f0ec
+
+  // warning: warm peach (deeper tones for readable text)
+  $warning-fg:           scale.$warning-6,   // #a06a66
+  $warning-emphasis:     scale.$warning-5,   // #b68480
+  $warning-muted:        color.change(scale.$warning-3, $alpha: 0.4),
+  $warning-subtle:       scale.$warning-0,   // #fdf8f7
+
+  // danger: soft pink (deeper tones for readable text)
+  $danger-fg:            scale.$danger-6,    // #c76c72
+  $danger-emphasis:      scale.$danger-6,    // #c76c72
+  $danger-muted:         color.change(scale.$danger-3, $alpha: 0.4),
+  $danger-subtle:        scale.$danger-0     // #fdf4f5
+);
+
+// light mode
+@forward "../target/atlantafx/styles/settings/config" with (
+  $darkMode: false
+);
+
+@use "../target/atlantafx/styles/general";
+@use "../target/atlantafx/styles/components";

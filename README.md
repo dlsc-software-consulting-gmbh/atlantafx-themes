@@ -8,18 +8,23 @@ Clone the repository and use it as a starting point for your own theme.
 
 | File | Java class | Mode | Description |
 |---|---|---|---|
+| `autumn.scss` | `Autumn` | dark | Dark navy canvas, teal neutral, burnt orange accent, brick red danger, autumn gold warning, olive success |
+| `blacky.scss` | `Blacky` | dark | Pure black canvas, white foreground, amber accent, vivid red danger, golden yellow warning, bright green success |
 | `browny.scss` | `Browny` | dark | Warm chocolate canvas, gold accent, hot-pink danger |
+| `github-dark-colorblind.scss` | `GithubDarkColorblind` | dark | GitHub Dark for Protanopia & Deuteranopia — orange danger, blue success |
+| `github-dark-tritanopia.scss` | `GithubDarkTritanopia` | dark | GitHub Dark for Tritanopia — red danger, blue success |
+| `github-light-colorblind.scss` | `GithubLightColorblind` | light | GitHub Light for Protanopia & Deuteranopia — orange danger, blue success |
+| `github-light-default.scss` | `GithubLightDefault` | light | GitHub Light Default palette (Primer light) |
+| `github-light-tritanopia.scss` | `GithubLightTritanopia` | light | GitHub Light for Tritanopia — red danger, blue success |
+| `github-soft-dark.scss` | `GithubSoftDark` | dark | GitHub Dark Dimmed palette (Primer dark_dimmed) |
+| `graphite.scss` | `Graphite` | light | Warm cream canvas, muted blue-gray accent, soft pink danger, olive success |
 | `navy-dark.scss` | `NavyDark` | dark | Dark navy canvas, gold accent |
 | `navy-light.scss` | `NavyLight` | light | White canvas, navy accent |
 | `news.scss` | `News` | dark | Slate canvas, indigo accent, teal success |
+| `seashell.scss` | `Seashell` | light | Warm amber canvas, steel blue neutral, slate teal accent, teal success, copper-orange warning, mauve danger |
 | `wip-dark.scss` | `WipDark` | dark | Work-in-progress dark theme — primary blue, brand red |
 | `wip-light.scss` | `WipLight` | light | Work-in-progress light theme — primary blue, brand red |
-| `github-soft-dark.scss` | `GithubSoftDark` | dark | GitHub Dark Dimmed palette (Primer dark_dimmed) |
-| `github-light-default.scss` | `GithubLightDefault` | light | GitHub Light Default palette (Primer light) |
-| `github-dark-colorblind.scss` | `GithubDarkColorblind` | dark | GitHub Dark for Protanopia & Deuteranopia — orange danger, blue success |
-| `github-light-colorblind.scss` | `GithubLightColorblind` | light | GitHub Light for Protanopia & Deuteranopia — orange danger, blue success |
-| `github-dark-tritanopia.scss` | `GithubDarkTritanopia` | dark | GitHub Dark for Tritanopia — red danger, blue success |
-| `github-light-tritanopia.scss` | `GithubLightTritanopia` | light | GitHub Light for Tritanopia — red danger, blue success |
+| `yacht.scss` | `Yacht` | light | Linen canvas, ocean teal accent, brass/rust warning, sea green success, maritime red danger |
 
 Compiled CSS files are written to `src/main/resources/com/dlsc/atlantafx/themes/`.
 

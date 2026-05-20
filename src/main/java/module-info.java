@@ -20,5 +20,10 @@ module com.dlsc.atlantafx.themes {
         com.dlsc.atlantafx.themes.GithubDarkColorblind,
         com.dlsc.atlantafx.themes.GithubLightColorblind,
         com.dlsc.atlantafx.themes.GithubDarkTritanopia,
-        com.dlsc.atlantafx.themes.GithubLightTritanopia;
+        com.dlsc.atlantafx.themes.GithubLightTritanopia,
+        com.dlsc.atlantafx.themes.Graphite,
+        com.dlsc.atlantafx.themes.Yacht,
+        com.dlsc.atlantafx.themes.Seashell,
+        com.dlsc.atlantafx.themes.Autumn,
+        com.dlsc.atlantafx.themes.Blacky;
 }
