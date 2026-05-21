@@ -1,0 +1,133 @@
+@use "sass:color";
+
+/* Spring Light - light theme
+ * Canvas: #ffffff (crisp white) - Neutral: sage green
+ * Accent: cherry blossom rose (#8c2058) - Success: spring green (#1a6820)
+ * Warning: daffodil gold (#7e5e00) - Danger: cherry red (#a00c1c)
+ */
+
+// modify color scale
+@forward "../target/atlantafx/styles/settings/color-scale" with (
+
+  $dark:    #081408,   // deepest forest — fg-default
+  $light:   #ffffff,   // canvas-default
+
+  // base — sage green neutrals (0 = lightest, 9 = darkest)
+  $base-0:  #dff2df,
+  $base-1:  #b8ddb8,
+  $base-2:  #8ec88e,
+  $base-3:  #65a865,
+  $base-4:  #4a8c4a,
+  $base-5:  #346034,   // fg-subtle — 7.32:1 on white
+  $base-6:  #234822,
+  $base-7:  #163314,
+  $base-8:  #0e2210,
+  $base-9:  #081408,
+
+  // accent — cherry blossom rose
+  $accent-0: #ffe0f0,
+  $accent-1: #f8b0d8,
+  $accent-2: #ee7cb8,
+  $accent-3: #d84898,
+  $accent-4: #b83478,
+  $accent-5: #8c2058,   // accent-fg — 8.53:1 on white
+  $accent-6: #621040,
+  $accent-7: #40082a,
+  $accent-8: #280416,
+  $accent-9: #140208,
+
+  // success — spring green
+  $success-0: #d8f5d0,
+  $success-1: #aaeaa0,
+  $success-2: #80de78,
+  $success-3: #56cc52,
+  $success-4: #3aaa38,
+  $success-5: #268828,
+  $success-6: #1a6820,   // success-fg — 6.90:1 on white
+  $success-7: #124c16,
+  $success-8: #0c320e,
+  $success-9: #061808,
+
+  // warning — daffodil gold
+  $warning-0: #fef7d8,
+  $warning-1: #fbeaa0,
+  $warning-2: #f7da60,
+  $warning-3: #f0c428,
+  $warning-4: #d4a200,
+  $warning-5: #a87e00,
+  $warning-6: #7e5e00,   // warning-fg — 6.02:1 on white
+  $warning-7: #5a4200,
+  $warning-8: #382800,
+  $warning-9: #1c1400,
+
+  // danger — cherry red
+  $danger-0: #fcd8dc,
+  $danger-1: #f8a8b0,
+  $danger-2: #f07880,
+  $danger-3: #e04850,
+  $danger-4: #c82828,
+  $danger-5: #a00c1c,   // danger-fg — 8.19:1 on white
+  $danger-6: #7a0c18,
+  $danger-7: #540810,
+  $danger-8: #340408,
+  $danger-9: #180204
+);
+
+@use "../target/atlantafx/styles/settings/color-scale" as scale;
+
+// modify functional colors
+@forward "../target/atlantafx/styles/settings/color-vars" with (
+
+  // dark forest text on crisp white canvas
+  $fg-default:           scale.$base-9,    // #081408 — high contrast
+  $fg-muted:             scale.$base-7,    // #163314
+  $fg-subtle:            scale.$base-5,    // #346034 — 7.32:1
+  $fg-onEmphasis:        scale.$light,     // white on colored emphasis fills
+
+  // white canvas with light sage insets
+  $canvas-default:       scale.$light,
+  $canvas-overlay:       scale.$light,
+  $canvas-inset:         scale.$base-0,    // #dff2df
+  $canvas-subtle:        scale.$base-0,
+
+  $border-default:       scale.$base-2,    // #8ec88e
+  $border-muted:         scale.$base-1,    // #b8ddb8
+  $border-subtle:        color.change(scale.$base-9, $alpha: 0.1),
+
+  $neutral-emphasisPlus: scale.$base-9,    // #081408 — white text: 18.85:1
+  $neutral-emphasis:     scale.$base-6,    // #234822 — white text: 11.53:1
+  $neutral-muted:        color.change(scale.$base-2, $alpha: 0.2),
+  $neutral-subtle:       color.change(scale.$base-0, $alpha: 0.7),
+
+  // accent: cherry blossom rose
+  $accent-fg:            scale.$accent-5,  // #8c2058 — 8.53:1
+  $accent-emphasis:      scale.$accent-5,  // white text: 8.53:1
+  $accent-muted:         color.change(scale.$accent-3, $alpha: 0.3),
+  $accent-subtle:        scale.$accent-0,
+
+  // success: spring green
+  $success-fg:           scale.$success-6, // #1a6820 — 6.90:1
+  $success-emphasis:     scale.$success-6, // white text: 6.90:1
+  $success-muted:        color.change(scale.$success-3, $alpha: 0.3),
+  $success-subtle:       scale.$success-0,
+
+  // warning: daffodil gold
+  $warning-fg:           scale.$warning-6, // #7e5e00 — 6.02:1
+  $warning-emphasis:     scale.$warning-6, // white text: 6.02:1
+  $warning-muted:        color.change(scale.$warning-3, $alpha: 0.3),
+  $warning-subtle:       scale.$warning-0,
+
+  // danger: cherry red
+  $danger-fg:            scale.$danger-5,  // #a00c1c — 8.19:1
+  $danger-emphasis:      scale.$danger-5,  // white text: 8.19:1
+  $danger-muted:         color.change(scale.$danger-3, $alpha: 0.3),
+  $danger-subtle:        scale.$danger-0
+);
+
+// light mode
+@forward "../target/atlantafx/styles/settings/config" with (
+  $darkMode: false
+);
+
+@use "../target/atlantafx/styles/general";
+@use "../target/atlantafx/styles/components";

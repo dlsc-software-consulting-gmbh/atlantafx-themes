@@ -1,0 +1,133 @@
+@use "sass:color";
+
+/* Fall Light - light theme
+ * Canvas: #fdf8f0 (warm cream) - Neutral: warm brown-gray
+ * Accent: rust sienna (#98300c) - Success: harvest olive (#40680c)
+ * Warning: harvest amber (#7e5400) - Danger: burgundy (#980c1c)
+ */
+
+// modify color scale
+@forward "../target/atlantafx/styles/settings/color-scale" with (
+
+  $dark:    #100604,   // darkest mahogany
+  $light:   #fdf8f0,   // warm cream canvas
+
+  // base — warm brown-gray (0 = lightest cream, 9 = dark mahogany)
+  $base-0:  #f0e8d8,
+  $base-1:  #d8c4a8,
+  $base-2:  #c0a080,
+  $base-3:  #a07c5c,
+  $base-4:  #88604c,   // fg-subtle — 5.19:1 on cream canvas
+  $base-5:  #6c4434,   // strong fg-subtle — 7.90:1 on cream canvas
+  $base-6:  #502c20,
+  $base-7:  #381a10,
+  $base-8:  #200e08,
+  $base-9:  #100604,
+
+  // accent — rust sienna
+  $accent-0: #fde8d8,
+  $accent-1: #f8c4a0,
+  $accent-2: #f09868,
+  $accent-3: #e06830,
+  $accent-4: #c04818,
+  $accent-5: #98300c,   // accent-fg — 7.19:1 on cream; white text: 7.60:1
+  $accent-6: #701c08,
+  $accent-7: #4e1004,
+  $accent-8: #2c0802,
+  $accent-9: #160402,
+
+  // success — harvest olive
+  $success-0: #e8f8d0,
+  $success-1: #ccee90,
+  $success-2: #b0e050,
+  $success-3: #90c828,
+  $success-4: #74a814,
+  $success-5: #588800,
+  $success-6: #40680c,   // success-fg — 6.56:1 on cream; white text: 6.93:1
+  $success-7: #2c4c08,
+  $success-8: #1c3006,
+  $success-9: #0e1802,
+
+  // warning — harvest amber
+  $warning-0: #fff4d8,
+  $warning-1: #fce8a0,
+  $warning-2: #f8d458,
+  $warning-3: #f0bc10,
+  $warning-4: #d49600,
+  $warning-5: #a87200,
+  $warning-6: #7e5400,   // warning-fg — 6.29:1 on cream; white text: 6.65:1
+  $warning-7: #583a00,
+  $warning-8: #342200,
+  $warning-9: #1a1100,
+
+  // danger — burgundy/cranberry
+  $danger-0: #fcd8da,
+  $danger-1: #f8a8ac,
+  $danger-2: #f07878,
+  $danger-3: #e04848,
+  $danger-4: #c02030,
+  $danger-5: #980c1c,   // danger-fg — 8.26:1 on cream; white text: 8.73:1
+  $danger-6: #701018,
+  $danger-7: #4e0c10,
+  $danger-8: #2c0808,
+  $danger-9: #160404
+);
+
+@use "../target/atlantafx/styles/settings/color-scale" as scale;
+
+// modify functional colors
+@forward "../target/atlantafx/styles/settings/color-vars" with (
+
+  // dark mahogany text on warm cream canvas
+  $fg-default:           scale.$base-9,    // #100604 — very high contrast
+  $fg-muted:             scale.$base-7,    // #381a10
+  $fg-subtle:            scale.$base-5,    // #6c4434 — 7.90:1
+  $fg-onEmphasis:        scale.$light,     // white on colored emphasis fills
+
+  // warm cream canvas with light warm insets
+  $canvas-default:       scale.$light,     // #fdf8f0
+  $canvas-overlay:       #ffffff,
+  $canvas-inset:         scale.$base-0,    // #f0e8d8
+  $canvas-subtle:        scale.$base-0,
+
+  $border-default:       scale.$base-2,    // #c0a080
+  $border-muted:         scale.$base-1,    // #d8c4a8
+  $border-subtle:        color.change(scale.$base-9, $alpha: 0.1),
+
+  $neutral-emphasisPlus: scale.$base-9,    // #100604 — white text: 18.92:1
+  $neutral-emphasis:     scale.$base-6,    // #502c20 — white text: 11.53:1
+  $neutral-muted:        color.change(scale.$base-2, $alpha: 0.2),
+  $neutral-subtle:       color.change(scale.$base-0, $alpha: 0.7),
+
+  // accent: rust sienna
+  $accent-fg:            scale.$accent-5,  // #98300c — 7.19:1 on cream
+  $accent-emphasis:      scale.$accent-5,  // white text: 7.60:1
+  $accent-muted:         color.change(scale.$accent-3, $alpha: 0.3),
+  $accent-subtle:        scale.$accent-0,
+
+  // success: harvest olive
+  $success-fg:           scale.$success-6, // #40680c — 6.56:1 on cream
+  $success-emphasis:     scale.$success-6, // white text: 6.93:1
+  $success-muted:        color.change(scale.$success-3, $alpha: 0.3),
+  $success-subtle:       scale.$success-0,
+
+  // warning: harvest amber
+  $warning-fg:           scale.$warning-6, // #7e5400 — 6.29:1 on cream
+  $warning-emphasis:     scale.$warning-6, // white text: 6.65:1
+  $warning-muted:        color.change(scale.$warning-3, $alpha: 0.3),
+  $warning-subtle:       scale.$warning-0,
+
+  // danger: burgundy
+  $danger-fg:            scale.$danger-5,  // #980c1c — 8.26:1 on cream
+  $danger-emphasis:      scale.$danger-5,  // white text: 8.73:1
+  $danger-muted:         color.change(scale.$danger-3, $alpha: 0.3),
+  $danger-subtle:        scale.$danger-0
+);
+
+// light mode
+@forward "../target/atlantafx/styles/settings/config" with (
+  $darkMode: false
+);
+
+@use "../target/atlantafx/styles/general";
+@use "../target/atlantafx/styles/components";

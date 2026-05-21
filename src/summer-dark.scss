@@ -1,0 +1,133 @@
+@use "sass:color";
+
+/* Summer Dark - dark theme
+ * Canvas: #081430 (deep tropical ocean) - Neutral: ocean blue
+ * Accent: golden sunset (#d48800) - Success: tropical teal (#20c89c)
+ * Warning: golden sun (#d49000) - Danger: sunset coral (#f06850)
+ */
+
+// modify color scale
+@forward "../target/atlantafx/styles/settings/color-scale" with (
+
+  $dark:    #040a1a,   // deep abyss
+  $light:   #ffffff,
+
+  // base — deep ocean navy → bright sky blue (0 = brightest text, 9 = deepest bg)
+  $base-0:  #d0e8ff,   // fg-default — 14.46:1 on canvas
+  $base-1:  #a0c8f8,   // fg-muted   — 10.50:1
+  $base-2:  #70a8e8,   // fg-subtle  —  7.33:1
+  $base-3:  #4488d0,
+  $base-4:  #2870b8,
+  $base-5:  #185898,
+  $base-6:  #104078,
+  $base-7:  #0a2a58,   // canvas-subtle
+  $base-8:  #081430,   // canvas-default
+  $base-9:  #040a1a,
+
+  // accent — golden sunset
+  $accent-0: #fff8e0,
+  $accent-1: #fce8a0,
+  $accent-2: #f8d050,   // accent-emphasis fill — dark text: 12.25:1
+  $accent-3: #f0b018,
+  $accent-4: #d48800,   // accent-fg — 6.35:1 on canvas
+  $accent-5: #a86800,
+  $accent-6: #7c4c00,
+  $accent-7: #5a3400,
+  $accent-8: #361e00,
+  $accent-9: #1c0e00,
+
+  // success — tropical teal
+  $success-0: #ccfce8,
+  $success-1: #90f0d0,   // success-emphasis fill — dark text: >13:1
+  $success-2: #50e0b8,
+  $success-3: #20c89c,   // success-fg — 8.50:1 on canvas
+  $success-4: #00a880,
+  $success-5: #008865,
+  $success-6: #006a4e,
+  $success-7: #00503a,
+  $success-8: #003028,
+  $success-9: #001814,
+
+  // warning — golden sun
+  $warning-0: #fff8d0,
+  $warning-1: #fce890,
+  $warning-2: #f8d040,   // warning-emphasis fill — dark text: ~12:1
+  $warning-3: #f0b818,
+  $warning-4: #d49000,   // warning-fg — 6.75:1 on canvas
+  $warning-5: #a87000,
+  $warning-6: #7c5200,
+  $warning-7: #583800,
+  $warning-8: #342000,
+  $warning-9: #1a1000,
+
+  // danger — sunset coral
+  $danger-0: #ffe8e0,
+  $danger-1: #ffc8b8,   // danger-emphasis fill — dark text: >12:1
+  $danger-2: #f89880,
+  $danger-3: #f06850,   // danger-fg — 5.90:1 on canvas
+  $danger-4: #d84030,
+  $danger-5: #b02018,
+  $danger-6: #880e0c,
+  $danger-7: #600808,
+  $danger-8: #3a0404,
+  $danger-9: #1c0202
+);
+
+@use "../target/atlantafx/styles/settings/color-scale" as scale;
+
+// modify functional colors
+@forward "../target/atlantafx/styles/settings/color-vars" with (
+
+  // bright sky blue text on deep ocean canvas
+  $fg-default:           scale.$base-0,    // #d0e8ff — 14.46:1
+  $fg-muted:             scale.$base-1,    // #a0c8f8 — 10.50:1
+  $fg-subtle:            scale.$base-2,    // #70a8e8 — 7.33:1
+  $fg-onEmphasis:        scale.$base-8,    // deep ocean — on warm/bright fills
+
+  // deep ocean canvas
+  $canvas-default:       scale.$base-8,    // #081430
+  $canvas-overlay:       color.adjust(scale.$base-8, $lightness: 7%),
+  $canvas-inset:         scale.$base-9,    // #040a1a
+  $canvas-subtle:        scale.$base-7,    // #0a2a58
+
+  $border-default:       scale.$base-3,    // #4488d0
+  $border-muted:         scale.$base-5,    // #185898
+  $border-subtle:        color.change(scale.$base-3, $alpha: 0.3),
+
+  $neutral-emphasisPlus: scale.$base-0,    // #d0e8ff — dark text: 14.46:1
+  $neutral-emphasis:     scale.$base-3,    // #4488d0 — dark text: ~5.7:1
+  $neutral-muted:        color.change(scale.$base-4, $alpha: 0.4),
+  $neutral-subtle:       color.change(scale.$base-7, $alpha: 0.5),
+
+  // accent: golden sunset
+  $accent-fg:            scale.$accent-4,  // #d48800 — 6.35:1
+  $accent-emphasis:      scale.$accent-2,  // #f8d050 — dark text: 12.25:1
+  $accent-muted:         color.change(scale.$accent-4, $alpha: 0.3),
+  $accent-subtle:        color.change(scale.$accent-4, $alpha: 0.12),
+
+  // success: tropical teal
+  $success-fg:           scale.$success-3, // #20c89c — 8.50:1
+  $success-emphasis:     scale.$success-1, // #90f0d0 — dark text: >13:1
+  $success-muted:        color.change(scale.$success-4, $alpha: 0.3),
+  $success-subtle:       color.change(scale.$success-4, $alpha: 0.12),
+
+  // warning: golden sun
+  $warning-fg:           scale.$warning-4, // #d49000 — 6.75:1
+  $warning-emphasis:     scale.$warning-2, // #f8d040 — dark text: ~12:1
+  $warning-muted:        color.change(scale.$warning-4, $alpha: 0.3),
+  $warning-subtle:       color.change(scale.$warning-4, $alpha: 0.12),
+
+  // danger: sunset coral
+  $danger-fg:            scale.$danger-3,  // #f06850 — 5.90:1
+  $danger-emphasis:      scale.$danger-1,  // #ffc8b8 — dark text: >12:1
+  $danger-muted:         color.change(scale.$danger-4, $alpha: 0.3),
+  $danger-subtle:        color.change(scale.$danger-4, $alpha: 0.12)
+);
+
+// dark mode
+@forward "../target/atlantafx/styles/settings/config" with (
+  $darkMode: true
+);
+
+@use "../target/atlantafx/styles/general";
+@use "../target/atlantafx/styles/components";

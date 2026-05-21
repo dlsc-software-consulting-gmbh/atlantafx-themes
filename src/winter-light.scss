@@ -1,0 +1,133 @@
+@use "sass:color";
+
+/* Winter Light - light theme
+ * Canvas: #ffffff (crisp white) - Neutral: cool blue-gray / silver ice
+ * Accent: deep ice blue (#1a4cae) - Success: pine green (#12701c)
+ * Warning: spiced amber (#7c5a00) - Danger: holly berry (#a00c20)
+ */
+
+// modify color scale
+@forward "../target/atlantafx/styles/settings/color-scale" with (
+
+  $dark:    #060e22,   // deep midnight
+  $light:   #ffffff,   // crisp white
+
+  // base — cool blue-gray silver-ice (0 = lightest ice, 9 = deepest midnight)
+  $base-0:  #dce8f8,
+  $base-1:  #b4ccec,
+  $base-2:  #8caede,
+  $base-3:  #6690cc,
+  $base-4:  #4874b8,
+  $base-5:  #3060a8,   // fg-subtle backup
+  $base-6:  #425e9e,   // fg-subtle — 6.31:1 on white
+  $base-7:  #1e3672,
+  $base-8:  #0e2050,
+  $base-9:  #060e22,
+
+  // accent — deep ice blue / indigo
+  $accent-0: #dce8ff,
+  $accent-1: #b0c8ff,
+  $accent-2: #7ca8f8,
+  $accent-3: #4888ec,
+  $accent-4: #2868d8,
+  $accent-5: #1a4cae,   // accent-fg — 7.81:1 on white; white text: 8.26:1
+  $accent-6: #123c88,
+  $accent-7: #0a2868,
+  $accent-8: #061648,
+  $accent-9: #020a28,
+
+  // success — pine/holly green
+  $success-0: #d4f8dc,
+  $success-1: #a4ecb0,
+  $success-2: #74d888,
+  $success-3: #4ec068,
+  $success-4: #30a04e,
+  $success-5: #1c8436,
+  $success-6: #12701c,   // success-fg — 6.25:1 on white; white text: 6.61:1
+  $success-7: #0c5014,
+  $success-8: #06300c,
+  $success-9: #021808,
+
+  // warning — spiced amber (warm contrast to cold theme)
+  $warning-0: #fff8d8,
+  $warning-1: #fce8a0,
+  $warning-2: #f8d060,
+  $warning-3: #eaba18,
+  $warning-4: #c89400,
+  $warning-5: #9e7200,
+  $warning-6: #7c5a00,   // warning-fg — 6.33:1 on white; white text: 6.69:1
+  $warning-7: #583f00,
+  $warning-8: #342600,
+  $warning-9: #1a1300,
+
+  // danger — holly berry red
+  $danger-0: #fcd8dc,
+  $danger-1: #f8a8b0,
+  $danger-2: #f07080,
+  $danger-3: #e04058,
+  $danger-4: #c01838,
+  $danger-5: #a00c20,   // danger-fg — 8.18:1 on white; white text: 8.65:1
+  $danger-6: #780818,
+  $danger-7: #540610,
+  $danger-8: #30030a,
+  $danger-9: #180206
+);
+
+@use "../target/atlantafx/styles/settings/color-scale" as scale;
+
+// modify functional colors
+@forward "../target/atlantafx/styles/settings/color-vars" with (
+
+  // deep midnight text on crisp white canvas
+  $fg-default:           scale.$base-9,    // #060e22 — very high contrast
+  $fg-muted:             scale.$base-7,    // #1e3672
+  $fg-subtle:            scale.$base-6,    // #425e9e — 6.31:1
+  $fg-onEmphasis:        scale.$light,     // white on dark emphasis fills
+
+  // crisp white canvas with icy blue insets
+  $canvas-default:       scale.$light,
+  $canvas-overlay:       scale.$light,
+  $canvas-inset:         scale.$base-0,    // #dce8f8
+  $canvas-subtle:        scale.$base-0,
+
+  $border-default:       scale.$base-2,    // #8caede
+  $border-muted:         scale.$base-1,    // #b4ccec
+  $border-subtle:        color.change(scale.$base-9, $alpha: 0.1),
+
+  $neutral-emphasisPlus: scale.$base-9,    // #060e22 — white text: 19.43:1
+  $neutral-emphasis:     scale.$base-6,    // #425e9e — white text: 6.31:1
+  $neutral-muted:        color.change(scale.$base-2, $alpha: 0.2),
+  $neutral-subtle:       color.change(scale.$base-0, $alpha: 0.7),
+
+  // accent: deep ice blue
+  $accent-fg:            scale.$accent-5,  // #1a4cae — 7.81:1
+  $accent-emphasis:      scale.$accent-5,  // white text: 8.26:1
+  $accent-muted:         color.change(scale.$accent-3, $alpha: 0.3),
+  $accent-subtle:        scale.$accent-0,
+
+  // success: pine green
+  $success-fg:           scale.$success-6, // #12701c — 6.25:1
+  $success-emphasis:     scale.$success-6, // white text: 6.61:1
+  $success-muted:        color.change(scale.$success-3, $alpha: 0.3),
+  $success-subtle:       scale.$success-0,
+
+  // warning: spiced amber
+  $warning-fg:           scale.$warning-6, // #7c5a00 — 6.33:1
+  $warning-emphasis:     scale.$warning-6, // white text: 6.69:1
+  $warning-muted:        color.change(scale.$warning-3, $alpha: 0.3),
+  $warning-subtle:       scale.$warning-0,
+
+  // danger: holly berry red
+  $danger-fg:            scale.$danger-5,  // #a00c20 — 8.18:1
+  $danger-emphasis:      scale.$danger-5,  // white text: 8.65:1
+  $danger-muted:         color.change(scale.$danger-3, $alpha: 0.3),
+  $danger-subtle:        scale.$danger-0
+);
+
+// light mode
+@forward "../target/atlantafx/styles/settings/config" with (
+  $darkMode: false
+);
+
+@use "../target/atlantafx/styles/general";
+@use "../target/atlantafx/styles/components";

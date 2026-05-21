@@ -1,0 +1,133 @@
+@use "sass:color";
+
+/* Winter Dark - dark theme
+ * Canvas: #080c18 (deep midnight indigo) - Neutral: indigo → ice blue
+ * Accent: ice blue (#1898d4) - Success: aurora green (#00a838)
+ * Warning: aurora gold (#d48a00) - Danger: aurora red (#f04858)
+ */
+
+// modify color scale
+@forward "../target/atlantafx/styles/settings/color-scale" with (
+
+  $dark:    #030610,   // deepest midnight
+  $light:   #ffffff,
+
+  // base — dark midnight indigo → bright ice blue (0 = brightest, 9 = deepest)
+  $base-0:  #d0eeff,   // fg-default — high contrast ice blue
+  $base-1:  #a8d8f8,   // fg-muted
+  $base-2:  #70a8e4,   // fg-subtle — 7.82:1 on canvas
+  $base-3:  #4488d0,
+  $base-4:  #2868b8,
+  $base-5:  #1a4e9a,
+  $base-6:  #10387a,
+  $base-7:  #0a2258,   // canvas-subtle
+  $base-8:  #080c18,   // canvas-default
+  $base-9:  #030610,
+
+  // accent — ice blue / crystalline
+  $accent-0: #d8f4ff,
+  $accent-1: #a0e8ff,   // accent-emphasis fill — dark text: 12.64:1
+  $accent-2: #60d0f8,
+  $accent-3: #1898d4,   // accent-fg — 6.02:1 on canvas
+  $accent-4: #0f78b0,
+  $accent-5: #085e90,
+  $accent-6: #044870,
+  $accent-7: #023050,
+  $accent-8: #011c30,
+  $accent-9: #000e18,
+
+  // success — aurora green
+  $success-0: #c8fce0,
+  $success-1: #88f0b8,   // success-emphasis fill — dark text: 14.09:1
+  $success-2: #40d880,
+  $success-3: #00bc60,
+  $success-4: #00a838,   // success-fg — 6.19:1 on canvas
+  $success-5: #008830,
+  $success-6: #006824,
+  $success-7: #00481a,
+  $success-8: #002c10,
+  $success-9: #001608,
+
+  // warning — aurora gold
+  $warning-0: #fff8d0,
+  $warning-1: #fceb90,   // warning-emphasis fill — dark text: 12.10:1
+  $warning-2: #f8d440,
+  $warning-3: #f0b800,
+  $warning-4: #d48a00,   // warning-fg — 6.91:1 on canvas
+  $warning-5: #a86800,
+  $warning-6: #7e4e00,
+  $warning-7: #563500,
+  $warning-8: #341e00,
+  $warning-9: #1a0f00,
+
+  // danger — aurora red
+  $danger-0: #ffe0e8,
+  $danger-1: #ffb0c0,   // danger-emphasis fill — dark text: 12.37:1
+  $danger-2: #f87898,
+  $danger-3: #f04858,   // danger-fg — 5.36:1 on canvas
+  $danger-4: #d02040,
+  $danger-5: #a80e2c,
+  $danger-6: #800820,
+  $danger-7: #580616,
+  $danger-8: #34030e,
+  $danger-9: #1a0208
+);
+
+@use "../target/atlantafx/styles/settings/color-scale" as scale;
+
+// modify functional colors
+@forward "../target/atlantafx/styles/settings/color-vars" with (
+
+  // bright ice blue text on deep midnight canvas
+  $fg-default:           scale.$base-0,    // #d0eeff — high contrast
+  $fg-muted:             scale.$base-1,    // #a8d8f8
+  $fg-subtle:            scale.$base-2,    // #70a8e4 — 7.82:1
+  $fg-onEmphasis:        scale.$base-8,    // deep midnight — on bright fills
+
+  // deep midnight canvas
+  $canvas-default:       scale.$base-8,    // #080c18
+  $canvas-overlay:       color.adjust(scale.$base-8, $lightness: 7%),
+  $canvas-inset:         scale.$base-9,    // #030610
+  $canvas-subtle:        scale.$base-7,    // #0a2258
+
+  $border-default:       scale.$base-3,    // #4488d0
+  $border-muted:         scale.$base-5,    // #1a4e9a
+  $border-subtle:        color.change(scale.$base-3, $alpha: 0.3),
+
+  $neutral-emphasisPlus: scale.$base-0,    // #d0eeff — dark text: high contrast
+  $neutral-emphasis:     scale.$base-2,    // #70a8e4 — dark text: 7.82:1
+  $neutral-muted:        color.change(scale.$base-4, $alpha: 0.4),
+  $neutral-subtle:       color.change(scale.$base-7, $alpha: 0.5),
+
+  // accent: ice blue
+  $accent-fg:            scale.$accent-3,  // #1898d4 — 6.02:1
+  $accent-emphasis:      scale.$accent-1,  // #a0e8ff — dark text: 12.64:1
+  $accent-muted:         color.change(scale.$accent-4, $alpha: 0.3),
+  $accent-subtle:        color.change(scale.$accent-4, $alpha: 0.12),
+
+  // success: aurora green
+  $success-fg:           scale.$success-4, // #00a838 — 6.19:1
+  $success-emphasis:     scale.$success-1, // #88f0b8 — dark text: 14.09:1
+  $success-muted:        color.change(scale.$success-4, $alpha: 0.3),
+  $success-subtle:       color.change(scale.$success-4, $alpha: 0.12),
+
+  // warning: aurora gold
+  $warning-fg:           scale.$warning-4, // #d48a00 — 6.91:1
+  $warning-emphasis:     scale.$warning-1, // #fceb90 — dark text: 12.10:1
+  $warning-muted:        color.change(scale.$warning-4, $alpha: 0.3),
+  $warning-subtle:       color.change(scale.$warning-4, $alpha: 0.12),
+
+  // danger: aurora red
+  $danger-fg:            scale.$danger-3,  // #f04858 — 5.36:1
+  $danger-emphasis:      scale.$danger-1,  // #ffb0c0 — dark text: 12.37:1
+  $danger-muted:         color.change(scale.$danger-4, $alpha: 0.3),
+  $danger-subtle:        color.change(scale.$danger-4, $alpha: 0.12)
+);
+
+// dark mode
+@forward "../target/atlantafx/styles/settings/config" with (
+  $darkMode: true
+);
+
+@use "../target/atlantafx/styles/general";
+@use "../target/atlantafx/styles/components";

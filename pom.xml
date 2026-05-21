@@ -130,6 +130,14 @@
                         <arg>${scss.inputDir}/blacky.scss:${css.outputDir}/blacky.css</arg>
                         <arg>${scss.inputDir}/army-dark.scss:${css.outputDir}/army-dark.css</arg>
                         <arg>${scss.inputDir}/army-light.scss:${css.outputDir}/army-light.css</arg>
+                        <arg>${scss.inputDir}/spring-light.scss:${css.outputDir}/spring-light.css</arg>
+                        <arg>${scss.inputDir}/spring-dark.scss:${css.outputDir}/spring-dark.css</arg>
+                        <arg>${scss.inputDir}/summer-light.scss:${css.outputDir}/summer-light.css</arg>
+                        <arg>${scss.inputDir}/summer-dark.scss:${css.outputDir}/summer-dark.css</arg>
+                        <arg>${scss.inputDir}/fall-light.scss:${css.outputDir}/fall-light.css</arg>
+                        <arg>${scss.inputDir}/fall-dark.scss:${css.outputDir}/fall-dark.css</arg>
+                        <arg>${scss.inputDir}/winter-light.scss:${css.outputDir}/winter-light.css</arg>
+                        <arg>${scss.inputDir}/winter-dark.scss:${css.outputDir}/winter-dark.css</arg>
                         <arg>--no-source-map</arg>
                     </args>
                 </configuration>

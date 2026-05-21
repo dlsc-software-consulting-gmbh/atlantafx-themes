@@ -1,0 +1,133 @@
+@use "sass:color";
+
+/* Spring Dark - dark theme
+ * Canvas: #0c1a10 (deep forest night) - Neutral: dark forest → bright spring green
+ * Accent: cherry blossom pink (#f060b0) - Success: lime green (#88d840)
+ * Warning: firefly gold (#f0b010) - Danger: rose berry (#f888b8)
+ */
+
+// modify color scale
+@forward "../target/atlantafx/styles/settings/color-scale" with (
+
+  $dark:    #080e08,   // deepest forest
+  $light:   #ffffff,
+
+  // base — dark forest → bright spring green (0 = brightest text, 9 = deepest bg)
+  $base-0:  #c8f0c8,   // fg-default — 14.31:1 on canvas
+  $base-1:  #98d898,   // fg-muted   — 10.77:1
+  $base-2:  #68c068,   // fg-subtle  —  7.97:1
+  $base-3:  #44a844,
+  $base-4:  #309030,
+  $base-5:  #206820,
+  $base-6:  #184c18,
+  $base-7:  #0f3010,   // canvas-subtle
+  $base-8:  #0c1a10,   // canvas-default
+  $base-9:  #080e08,
+
+  // accent — cherry blossom pink
+  $accent-0: #fff0f6,
+  $accent-1: #ffccee,
+  $accent-2: #f890cc,   // accent-emphasis fill — dark text: 8.41:1
+  $accent-3: #f060b0,   // accent-fg — 5.98:1
+  $accent-4: #d83a90,
+  $accent-5: #b01e70,
+  $accent-6: #841450,
+  $accent-7: #581034,
+  $accent-8: #30081c,
+  $accent-9: #18040e,
+
+  // success — lime spring green (distinct from blue-green base)
+  $success-0: #d8fca8,
+  $success-1: #b0f070,
+  $success-2: #88d840,   // success-fg — ~10:1 on canvas
+  $success-3: #68c020,
+  $success-4: #4e9c18,
+  $success-5: #387c10,
+  $success-6: #285e0c,
+  $success-7: #1c4008,
+  $success-8: #122806,
+  $success-9: #081404,
+
+  // warning — firefly gold
+  $warning-0: #fff8d0,
+  $warning-1: #fce888,
+  $warning-2: #f8d040,
+  $warning-3: #f0b010,   // warning-fg — ~9.35:1 on canvas
+  $warning-4: #d08800,
+  $warning-5: #a06800,
+  $warning-6: #784e00,
+  $warning-7: #503400,
+  $warning-8: #2c1c00,
+  $warning-9: #160e00,
+
+  // danger — rose berry
+  $danger-0: #ffe8f0,
+  $danger-1: #ffbcd8,
+  $danger-2: #f888b8,   // danger-fg — ~7.88:1 on canvas
+  $danger-3: #ee5898,
+  $danger-4: #d03078,
+  $danger-5: #a81858,
+  $danger-6: #7e0c40,
+  $danger-7: #540828,
+  $danger-8: #2c0416,
+  $danger-9: #16020c
+);
+
+@use "../target/atlantafx/styles/settings/color-scale" as scale;
+
+// modify functional colors
+@forward "../target/atlantafx/styles/settings/color-vars" with (
+
+  // bright spring green text on deep forest canvas
+  $fg-default:           scale.$base-0,    // #c8f0c8 — 14.31:1
+  $fg-muted:             scale.$base-1,    // #98d898 — 10.77:1
+  $fg-subtle:            scale.$base-2,    // #68c068 — 7.97:1
+  $fg-onEmphasis:        scale.$base-8,    // dark forest — on bright emphasis fills
+
+  // deep forest canvas
+  $canvas-default:       scale.$base-8,    // #0c1a10
+  $canvas-overlay:       color.adjust(scale.$base-8, $lightness: 7%),
+  $canvas-inset:         scale.$base-9,    // #080e08
+  $canvas-subtle:        scale.$base-7,    // #0f3010
+
+  $border-default:       scale.$base-3,    // #44a844
+  $border-muted:         scale.$base-5,    // #206820
+  $border-subtle:        color.change(scale.$base-3, $alpha: 0.3),
+
+  $neutral-emphasisPlus: scale.$base-0,    // #c8f0c8 — dark text: 14.31:1
+  $neutral-emphasis:     scale.$base-3,    // #44a844 — dark text: 5.97:1
+  $neutral-muted:        color.change(scale.$base-4, $alpha: 0.4),
+  $neutral-subtle:       color.change(scale.$base-7, $alpha: 0.5),
+
+  // accent: cherry blossom pink
+  $accent-fg:            scale.$accent-3,  // #f060b0 — 5.98:1
+  $accent-emphasis:      scale.$accent-2,  // #f890cc — dark text: 8.41:1
+  $accent-muted:         color.change(scale.$accent-4, $alpha: 0.3),
+  $accent-subtle:        color.change(scale.$accent-4, $alpha: 0.12),
+
+  // success: lime spring green
+  $success-fg:           scale.$success-2, // #88d840 — ~10:1
+  $success-emphasis:     scale.$success-1, // #b0f070 — dark text: >14:1
+  $success-muted:        color.change(scale.$success-4, $alpha: 0.3),
+  $success-subtle:       color.change(scale.$success-4, $alpha: 0.12),
+
+  // warning: firefly gold
+  $warning-fg:           scale.$warning-3, // #f0b010 — ~9.35:1
+  $warning-emphasis:     scale.$warning-2, // #f8d040 — dark text: ~12:1
+  $warning-muted:        color.change(scale.$warning-4, $alpha: 0.3),
+  $warning-subtle:       color.change(scale.$warning-4, $alpha: 0.12),
+
+  // danger: rose berry
+  $danger-fg:            scale.$danger-2,  // #f888b8 — ~7.88:1
+  $danger-emphasis:      scale.$danger-1,  // #ffbcd8 — dark text: >12:1
+  $danger-muted:         color.change(scale.$danger-4, $alpha: 0.3),
+  $danger-subtle:        color.change(scale.$danger-4, $alpha: 0.12)
+);
+
+// dark mode
+@forward "../target/atlantafx/styles/settings/config" with (
+  $darkMode: true
+);
+
+@use "../target/atlantafx/styles/general";
+@use "../target/atlantafx/styles/components";

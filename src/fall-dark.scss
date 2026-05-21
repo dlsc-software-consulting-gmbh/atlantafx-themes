@@ -1,0 +1,133 @@
+@use "sass:color";
+
+/* Fall Dark - dark theme
+ * Canvas: #1e0c06 (deep mahogany) - Neutral: warm sienna-amber
+ * Accent: pumpkin orange (#f09810) - Success: harvest green (#78c020)
+ * Warning: harvest gold (#f0b010) - Danger: cranberry (#f06040)
+ */
+
+// modify color scale
+@forward "../target/atlantafx/styles/settings/color-scale" with (
+
+  $dark:    #0c0602,   // deepest mahogany
+  $light:   #ffffff,
+
+  // base — dark mahogany → warm amber (0 = brightest amber, 9 = deepest dark)
+  $base-0:  #f8e0b8,   // fg-default — high contrast warm
+  $base-1:  #e8c080,   // fg-muted
+  $base-2:  #e0a840,   // fg-subtle — 8.80:1 on canvas
+  $base-3:  #c88418,
+  $base-4:  #a06008,
+  $base-5:  #784404,
+  $base-6:  #502c02,
+  $base-7:  #341a02,   // canvas-subtle
+  $base-8:  #1e0c06,   // canvas-default
+  $base-9:  #0c0602,
+
+  // accent — pumpkin orange
+  $accent-0: #fff0d8,
+  $accent-1: #ffd090,   // accent-emphasis fill — dark text: 11.43:1
+  $accent-2: #f8b050,
+  $accent-3: #f09810,   // accent-fg — 8.42:1 on canvas
+  $accent-4: #d07800,
+  $accent-5: #a05800,
+  $accent-6: #783c00,
+  $accent-7: #542800,
+  $accent-8: #301600,
+  $accent-9: #180a00,
+
+  // success — harvest green
+  $success-0: #e8fcd0,
+  $success-1: #c4f098,   // success-emphasis fill — dark text: 13.54:1
+  $success-2: #98e050,
+  $success-3: #78c020,   // success-fg — 8.29:1 on canvas
+  $success-4: #5c9c14,
+  $success-5: #447808,
+  $success-6: #2e5406,
+  $success-7: #1e3804,
+  $success-8: #101e02,
+  $success-9: #081002,
+
+  // warning — harvest gold
+  $warning-0: #fff8d0,
+  $warning-1: #f8e888,   // warning-emphasis fill — dark text: 12.27:1
+  $warning-2: #f0cc40,
+  $warning-3: #f0b010,   // warning-fg — 9.99:1 on canvas
+  $warning-4: #d08800,
+  $warning-5: #a06400,
+  $warning-6: #784600,
+  $warning-7: #543000,
+  $warning-8: #301c00,
+  $warning-9: #180e00,
+
+  // danger — cranberry
+  $danger-0: #ffe8e0,
+  $danger-1: #ffc0a8,   // danger-emphasis fill — dark text: >12:1
+  $danger-2: #f89070,
+  $danger-3: #f06040,   // danger-fg — 5.85:1 on canvas
+  $danger-4: #d84020,
+  $danger-5: #b01e10,
+  $danger-6: #880e08,
+  $danger-7: #600806,
+  $danger-8: #3a0404,
+  $danger-9: #1c0202
+);
+
+@use "../target/atlantafx/styles/settings/color-scale" as scale;
+
+// modify functional colors
+@forward "../target/atlantafx/styles/settings/color-vars" with (
+
+  // warm amber text on deep mahogany canvas
+  $fg-default:           scale.$base-0,    // #f8e0b8 — high contrast
+  $fg-muted:             scale.$base-1,    // #e8c080
+  $fg-subtle:            scale.$base-2,    // #e0a840 — 8.80:1
+  $fg-onEmphasis:        scale.$base-8,    // deep mahogany — on bright fills
+
+  // deep mahogany canvas
+  $canvas-default:       scale.$base-8,    // #1e0c06
+  $canvas-overlay:       color.adjust(scale.$base-8, $lightness: 7%),
+  $canvas-inset:         scale.$base-9,    // #0c0602
+  $canvas-subtle:        scale.$base-7,    // #341a02
+
+  $border-default:       scale.$base-3,    // #c88418
+  $border-muted:         scale.$base-5,    // #784404
+  $border-subtle:        color.change(scale.$base-3, $alpha: 0.3),
+
+  $neutral-emphasisPlus: scale.$base-0,    // #f8e0b8 — dark text: high contrast
+  $neutral-emphasis:     scale.$base-2,    // #e0a840 — dark text: 8.80:1
+  $neutral-muted:        color.change(scale.$base-3, $alpha: 0.4),
+  $neutral-subtle:       color.change(scale.$base-7, $alpha: 0.5),
+
+  // accent: pumpkin orange
+  $accent-fg:            scale.$accent-3,  // #f09810 — 8.42:1
+  $accent-emphasis:      scale.$accent-1,  // #ffd090 — dark text: 11.43:1
+  $accent-muted:         color.change(scale.$accent-4, $alpha: 0.3),
+  $accent-subtle:        color.change(scale.$accent-4, $alpha: 0.12),
+
+  // success: harvest green
+  $success-fg:           scale.$success-3, // #78c020 — 8.29:1
+  $success-emphasis:     scale.$success-1, // #c4f098 — dark text: 13.54:1
+  $success-muted:        color.change(scale.$success-4, $alpha: 0.3),
+  $success-subtle:       color.change(scale.$success-4, $alpha: 0.12),
+
+  // warning: harvest gold
+  $warning-fg:           scale.$warning-3, // #f0b010 — 9.99:1
+  $warning-emphasis:     scale.$warning-1, // #f8e888 — dark text: 12.27:1
+  $warning-muted:        color.change(scale.$warning-4, $alpha: 0.3),
+  $warning-subtle:       color.change(scale.$warning-4, $alpha: 0.12),
+
+  // danger: cranberry
+  $danger-fg:            scale.$danger-3,  // #f06040 — 5.85:1
+  $danger-emphasis:      scale.$danger-1,  // #ffc0a8 — dark text: >12:1
+  $danger-muted:         color.change(scale.$danger-4, $alpha: 0.3),
+  $danger-subtle:        color.change(scale.$danger-4, $alpha: 0.12)
+);
+
+// dark mode
+@forward "../target/atlantafx/styles/settings/config" with (
+  $darkMode: true
+);
+
+@use "../target/atlantafx/styles/general";
+@use "../target/atlantafx/styles/components";
