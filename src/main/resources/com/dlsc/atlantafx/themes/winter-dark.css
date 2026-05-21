@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .root {
   -color-dark: #030610;
   -color-light: #ffffff;
@@ -4669,7 +4668,7 @@ Add support for NO_HEADER tweak in tables .table-view.no-header > .column-header
 }
 
 /* Winter Dark - dark theme
- * Canvas: #080c18 (deep midnight indigo) - Neutral: indigo → ice blue
+ * Canvas: #080c18 (deep midnight indigo) - Neutral: indigo -> ice blue
  * Accent: ice blue (#1898d4) - Success: aurora green (#00a838)
  * Warning: aurora gold (#d48a00) - Danger: aurora red (#f04858)
  */
