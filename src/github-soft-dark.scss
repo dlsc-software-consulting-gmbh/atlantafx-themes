@@ -77,9 +77,9 @@
 
   // text: soft blue-gray on dark canvas
   $fg-default:           scale.$base-0,   // #adbac7 — main text
-  $fg-muted:             scale.$base-2,   // #768390
-  $fg-subtle:            scale.$base-3,   // #636e7b
-  $fg-onEmphasis:        #cdd9e5,         // lightest text used on colored fills
+  $fg-muted:             scale.$base-1,   // #909dab
+  $fg-subtle:            #818f9e,         // 4.55:1 on canvas — between base-1 and base-2
+  $fg-onEmphasis:        scale.$light,    // #ffffff — white text on colored fills
 
   // canvas: layered dark blue-gray backgrounds
   $canvas-default:       scale.$base-8,   // #22272e — primary canvas
@@ -91,10 +91,10 @@
   $border-muted:         scale.$base-6,   // #373e47
   $border-subtle:        scale.$base-7,   // #2d333b
 
-  $neutral-emphasisPlus: scale.$base-5,   // #444c56 — 6.1:1 contrast against #cdd9e5 fg-emphasis
-  $neutral-emphasis:     scale.$base-4,   // #545d68 — 4.7:1 contrast against #cdd9e5 fg-emphasis
-  $neutral-muted:        scale.$base-4,   // #545d68
-  $neutral-subtle:       scale.$base-7,   // #2d333b
+  $neutral-emphasisPlus: scale.$base-5,   // #444c56 — 8.7:1 contrast against white fg-onEmphasis
+  $neutral-emphasis:     scale.$base-4,   // #545d68 — 6.7:1 contrast against white fg-onEmphasis
+  $neutral-muted:        scale.$base-3,   // #636e7b — lighter than emphasis
+  $neutral-subtle:       scale.$base-2,   // #768390 — lightest neutral bg
 
   // accent: GitHub blue
   $accent-fg:            scale.$accent-3,  // #539bf5 — readable blue on dark
@@ -115,7 +115,7 @@
   $warning-subtle:       color.change(scale.$warning-4, $alpha: 0.12),
 
   // danger: GitHub red
-  $danger-fg:            scale.$danger-3,   // #e5534b
+  $danger-fg:            scale.$danger-2,   // #f5827a
   $danger-emphasis:      scale.$danger-4,   // #c93c37
   $danger-muted:         color.change(scale.$danger-4, $alpha: 0.3),
   $danger-subtle:        color.change(scale.$danger-4, $alpha: 0.12)

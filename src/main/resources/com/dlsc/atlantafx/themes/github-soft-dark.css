@@ -52,9 +52,9 @@
   -color-danger-8: #390a08;
   -color-danger-9: #1a0504;
   -color-fg-default: #adbac7;
-  -color-fg-muted: #768390;
-  -color-fg-subtle: #636e7b;
-  -color-fg-emphasis: #cdd9e5;
+  -color-fg-muted: #909dab;
+  -color-fg-subtle: #818f9e;
+  -color-fg-emphasis: #ffffff;
   -color-bg-default: #22272e;
   -color-bg-overlay: #444c56;
   -color-bg-subtle: #2d333b;
@@ -65,8 +65,8 @@
   -color-shadow-default: #768390;
   -color-neutral-emphasis-plus: #444c56;
   -color-neutral-emphasis: #545d68;
-  -color-neutral-muted: #545d68;
-  -color-neutral-subtle: #2d333b;
+  -color-neutral-muted: #636e7b;
+  -color-neutral-subtle: #768390;
   -color-accent-fg: #539bf5;
   -color-accent-emphasis: #316dca;
   -color-accent-muted: rgba(49, 109, 202, 0.3);
@@ -79,7 +79,7 @@
   -color-success-emphasis: #347d39;
   -color-success-muted: rgba(52, 125, 57, 0.3);
   -color-success-subtle: rgba(52, 125, 57, 0.12);
-  -color-danger-fg: #e5534b;
+  -color-danger-fg: #f5827a;
   -color-danger-emphasis: #c93c37;
   -color-danger-muted: rgba(201, 60, 55, 0.3);
   -color-danger-subtle: rgba(201, 60, 55, 0.12);

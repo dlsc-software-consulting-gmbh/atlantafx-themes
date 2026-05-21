@@ -79,9 +79,9 @@
 @forward "../target/atlantafx/styles/settings/color-vars" with (
 
   // text: pale blue-teal on dark navy canvas
-  $fg-default:           scale.$base-0,   // #b8dee9
-  $fg-muted:             scale.$base-2,   // #6ab1c8
-  $fg-subtle:            scale.$base-3,   // #48a0b8
+  $fg-default:           scale.$base-0,   // #b8dee9 — 6.26:1
+  $fg-muted:             scale.$base-1,   // #91c8da — 4.90:1
+  $fg-subtle:            #88c3d6,         // custom — 4.62:1 (between base-1 and base-2)
   $fg-onEmphasis:        #1a2c3e,         // dark navy — legible on warm emphasis fills
 
   // canvas: layered dark navy backgrounds
@@ -100,26 +100,26 @@
   $neutral-subtle:       color.change(scale.$base-7, $alpha: 0.5),
 
   // accent: burnt orange
-  $accent-fg:            scale.$accent-3,  // #f07040
-  $accent-emphasis:      scale.$accent-4,  // #e2480c (given)
+  $accent-fg:            #f9a86b,          // custom 4.63:1 (between accent-1 and accent-2)
+  $accent-emphasis:      scale.$accent-3,  // #f07040 — 4.82:1 vs fg-onEmphasis
   $accent-muted:         color.change(scale.$accent-4, $alpha: 0.3),
   $accent-subtle:        color.change(scale.$accent-4, $alpha: 0.12),
 
   // success: olive green
-  $success-fg:           scale.$success-3,  // #7aac3a
-  $success-emphasis:     scale.$success-4,  // #5e8c28
+  $success-fg:           scale.$success-2,  // #96cc50 — 4.72:1
+  $success-emphasis:     scale.$success-3,  // #7aac3a — 5.29:1 vs fg-onEmphasis
   $success-muted:        color.change(scale.$success-4, $alpha: 0.3),
   $success-subtle:       color.change(scale.$success-4, $alpha: 0.12),
 
   // warning: autumn gold
-  $warning-fg:           scale.$warning-3,  // #e8a020
-  $warning-emphasis:     scale.$warning-4,  // #c07c00
+  $warning-fg:           scale.$warning-2,  // #efc440 — 5.39:1
+  $warning-emphasis:     scale.$warning-3,  // #e8a020 — 6.43:1 vs fg-onEmphasis
   $warning-muted:        color.change(scale.$warning-4, $alpha: 0.3),
   $warning-subtle:       color.change(scale.$warning-4, $alpha: 0.12),
 
   // danger: brick red
-  $danger-fg:            scale.$danger-3,   // #e85838 (brighter fg)
-  $danger-emphasis:      scale.$danger-6,   // #631B08 (given)
+  $danger-fg:            #fca489,           // custom 4.61:1 (between danger-1 and danger-2)
+  $danger-emphasis:      scale.$danger-2,   // #f88060 — 5.60:1 vs fg-onEmphasis
   $danger-muted:         color.change(scale.$danger-4, $alpha: 0.3),
   $danger-subtle:        color.change(scale.$danger-4, $alpha: 0.12)
 );
