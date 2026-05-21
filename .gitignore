@@ -1,3 +1,5 @@
 /dist
 /target
 /.idea
+# macOS
+.DS_Store
