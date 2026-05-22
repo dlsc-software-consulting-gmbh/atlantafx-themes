@@ -4,7 +4,7 @@ A collection of custom JavaFX CSS themes built on top of [AtlantaFX](https://git
 
 Browse and compare all themes at **https://dlsc-software-consulting-gmbh.github.io/atlantafx-themes/**
 
-Clone the repository and use it as a starting point for your own theme.
+Clone the repository and use it as a starting point for your own theme. Contributions of new themes or improvements to existing ones are welcome — simply open a pull request.
 
 ## Themes
 
