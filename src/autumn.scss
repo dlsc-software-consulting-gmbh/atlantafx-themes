@@ -121,7 +121,9 @@
   $danger-fg:            #fca489,           // custom 4.61:1 (between danger-1 and danger-2)
   $danger-emphasis:      scale.$danger-2,   // #f88060 — 5.60:1 vs fg-onEmphasis
   $danger-muted:         color.change(scale.$danger-4, $alpha: 0.3),
-  $danger-subtle:        color.change(scale.$danger-4, $alpha: 0.12)
+  $danger-subtle:        color.change(scale.$danger-4, $alpha: 0.12),
+
+  $shadow-default:       scale.$dark
 );
 
 // dark mode

@@ -117,7 +117,9 @@
   $danger-fg:            scale.$danger-4,   // #f85149
   $danger-emphasis:      scale.$danger-5,   // #da3633
   $danger-muted:         color.change(scale.$danger-4, $alpha: 0.15),
-  $danger-subtle:        color.change(scale.$danger-5, $alpha: 0.1)
+  $danger-subtle:        color.change(scale.$danger-5, $alpha: 0.1),
+
+  $shadow-default:       scale.$dark
 );
 
 @forward "../target/atlantafx/styles/settings/config" with (

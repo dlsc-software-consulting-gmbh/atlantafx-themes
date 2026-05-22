@@ -117,7 +117,9 @@
   $danger-fg:            scale.$danger-3,
   $danger-emphasis:      scale.$danger-3,   // #ef80bc — 5.9:1 contrast against dark fg-onEmphasis
   $danger-muted:         color.change(scale.$danger-5, $alpha: 0.3),
-  $danger-subtle:        color.change(scale.$danger-5, $alpha: 0.12)
+  $danger-subtle:        color.change(scale.$danger-5, $alpha: 0.12),
+
+  $shadow-default:       scale.$dark
 );
 
 // dark mode — chocolate brown is the canvas colour

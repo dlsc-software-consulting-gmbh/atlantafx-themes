@@ -121,7 +121,9 @@
   $danger-fg:            scale.$danger-3,  // #f06850 — 5.90:1
   $danger-emphasis:      scale.$danger-1,  // #ffc8b8 — dark text: >12:1
   $danger-muted:         color.change(scale.$danger-4, $alpha: 0.3),
-  $danger-subtle:        color.change(scale.$danger-4, $alpha: 0.12)
+  $danger-subtle:        color.change(scale.$danger-4, $alpha: 0.12),
+
+  $shadow-default:       scale.$dark
 );
 
 // dark mode

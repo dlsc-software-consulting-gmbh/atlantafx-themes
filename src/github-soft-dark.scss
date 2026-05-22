@@ -118,7 +118,9 @@
   $danger-fg:            scale.$danger-2,   // #f5827a
   $danger-emphasis:      scale.$danger-4,   // #c93c37
   $danger-muted:         color.change(scale.$danger-4, $alpha: 0.3),
-  $danger-subtle:        color.change(scale.$danger-4, $alpha: 0.12)
+  $danger-subtle:        color.change(scale.$danger-4, $alpha: 0.12),
+
+  $shadow-default:       scale.$dark
 );
 
 // dark mode — blue-gray is the canvas colour

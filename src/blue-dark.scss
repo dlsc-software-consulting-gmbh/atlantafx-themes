@@ -117,7 +117,9 @@
   $danger-fg:            scale.$danger-2,   // #f39499 — light on dark
   $danger-emphasis:      scale.$danger-3,   // #ec6368 — 5.6:1 against dark fg-onEmphasis
   $danger-muted:         color.change(scale.$danger-5, $alpha: 0.3),
-  $danger-subtle:        color.change(scale.$danger-5, $alpha: 0.12)
+  $danger-subtle:        color.change(scale.$danger-5, $alpha: 0.12),
+
+  $shadow-default:       scale.$dark
 );
 
 // dark mode

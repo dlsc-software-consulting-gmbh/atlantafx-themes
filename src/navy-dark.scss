@@ -115,7 +115,9 @@
   $danger-fg:            scale.$danger-1,
   $danger-emphasis:      scale.$danger-3,
   $danger-muted:         color.change(scale.$danger-3, $alpha: 0.3),
-  $danger-subtle:        color.change(scale.$danger-3, $alpha: 0.1)
+  $danger-subtle:        color.change(scale.$danger-3, $alpha: 0.1),
+
+  $shadow-default:       scale.$dark
 );
 
 // dark mode — navy is the canvas colour
