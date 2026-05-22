@@ -12,7 +12,11 @@ Clone the repository and use it as a starting point for your own theme.
 | `army-light.scss` | `ArmyLight` | light | Light khaki canvas, olive drab neutral, tactical green accent, desert amber warning, forest green success, military red danger |
 | `autumn.scss` | `Autumn` | dark | Dark navy canvas, teal neutral, burnt orange accent, brick red danger, autumn gold warning, olive success |
 | `blacky.scss` | `Blacky` | dark | Pure black canvas, white foreground, amber accent, vivid red danger, golden yellow warning, bright green success |
+| `blue-dark.scss` | `BlueDark` | dark | Blue dark theme — primary blue, brand red |
+| `blue-light.scss` | `BlueLight` | light | Blue light theme — primary blue, brand red |
 | `browny.scss` | `Browny` | dark | Warm chocolate canvas, gold accent, hot-pink danger |
+| `fall-dark.scss` | `FallDark` | dark | Deep mahogany canvas, warm amber neutrals, pumpkin orange accent, harvest gold warning, harvest green success, cranberry danger |
+| `fall-light.scss` | `FallLight` | light | Warm cream canvas, brown-gray neutrals, rust sienna accent, harvest amber warning, harvest olive success, burgundy danger |
 | `github-dark-colorblind.scss` | `GithubDarkColorblind` | dark | GitHub Dark for Protanopia & Deuteranopia — orange danger, blue success |
 | `github-dark-tritanopia.scss` | `GithubDarkTritanopia` | dark | GitHub Dark for Tritanopia — red danger, blue success |
 | `github-light-colorblind.scss` | `GithubLightColorblind` | light | GitHub Light for Protanopia & Deuteranopia — orange danger, blue success |
@@ -22,8 +26,12 @@ Clone the repository and use it as a starting point for your own theme.
 | `navy-dark.scss` | `NavyDark` | dark | Dark navy canvas, gold accent |
 | `navy-light.scss` | `NavyLight` | light | White canvas, navy accent |
 | `news.scss` | `News` | dark | Slate canvas, indigo accent, teal success |
-| `blue-dark.scss` | `BlueDark` | dark | Blue dark theme — primary blue, brand red |
-| `blue-light.scss` | `BlueLight` | light | Blue light theme — primary blue, brand red |
+| `spring-dark.scss` | `SpringDark` | dark | Deep forest night canvas, bright lime green neutrals, cherry blossom pink accent, firefly gold warning, lime green success, rose berry danger |
+| `spring-light.scss` | `SpringLight` | light | White canvas, sage green neutrals, cherry blossom rose accent, daffodil amber warning, spring green success, cherry red danger |
+| `summer-dark.scss` | `SummerDark` | dark | Deep tropical ocean canvas, sky blue neutrals, golden sunset accent, golden sun warning, tropical teal success, sunset coral danger |
+| `summer-light.scss` | `SummerLight` | light | White canvas, sky blue-gray neutrals, ocean blue accent, sunflower amber warning, grass green success, sunburn coral danger |
+| `winter-dark.scss` | `WinterDark` | dark | Deep midnight indigo canvas, ice blue neutrals, crystalline blue accent, aurora gold warning, aurora green success, aurora red danger |
+| `winter-light.scss` | `WinterLight` | light | White canvas, silver-ice blue neutrals, deep indigo accent, spiced amber warning, pine green success, holly berry danger |
 | `yacht.scss` | `Yacht` | light | Linen canvas, ocean teal accent, brass/rust warning, sea green success, maritime red danger |
 
 Compiled CSS files are written to `src/main/resources/com/dlsc/atlantafx/themes/`.
