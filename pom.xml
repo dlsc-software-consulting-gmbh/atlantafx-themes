@@ -54,11 +54,6 @@
             <version>${atlantafx.version}</version>
         </dependency>
         <dependency>
-            <groupId>io.github.mkpaz</groupId>
-            <artifactId>atlantafx-styles</artifactId>
-            <version>${atlantafx.version}</version>
-        </dependency>
-        <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
             <version>5.10.2</version>
