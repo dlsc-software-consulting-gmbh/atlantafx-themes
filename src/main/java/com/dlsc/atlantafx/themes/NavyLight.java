@@ -2,8 +2,14 @@ package com.dlsc.atlantafx.themes;
 
 import atlantafx.base.theme.Theme;
 
+/**
+ * Navy Light AtlantaFX theme.
+ */
 public final class NavyLight implements Theme {
 
+    /**
+     * Creates a new instance.
+     */
     public NavyLight() {
     }
 

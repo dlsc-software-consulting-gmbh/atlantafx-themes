@@ -2,8 +2,14 @@ package com.dlsc.atlantafx.themes;
 
 import atlantafx.base.theme.Theme;
 
+/**
+ * GitHub Light Tritanopia AtlantaFX theme.
+ */
 public final class GithubLightTritanopia implements Theme {
 
+    /**
+     * Creates a new instance.
+     */
     public GithubLightTritanopia() {
     }
 

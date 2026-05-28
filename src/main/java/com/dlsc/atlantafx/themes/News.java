@@ -2,8 +2,14 @@ package com.dlsc.atlantafx.themes;
 
 import atlantafx.base.theme.Theme;
 
+/**
+ * News AtlantaFX theme.
+ */
 public final class News implements Theme {
 
+    /**
+     * Creates a new instance.
+     */
     public News() {
     }
 

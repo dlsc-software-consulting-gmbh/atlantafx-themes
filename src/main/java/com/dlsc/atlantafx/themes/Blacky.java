@@ -2,8 +2,14 @@ package com.dlsc.atlantafx.themes;
 
 import atlantafx.base.theme.Theme;
 
+/**
+ * Blacky AtlantaFX theme.
+ */
 public final class Blacky implements Theme {
 
+    /**
+     * Creates a new instance.
+     */
     public Blacky() {
     }
 

@@ -2,8 +2,14 @@ package com.dlsc.atlantafx.themes;
 
 import atlantafx.base.theme.Theme;
 
+/**
+ * Yacht AtlantaFX theme.
+ */
 public final class Yacht implements Theme {
 
+    /**
+     * Creates a new instance.
+     */
     public Yacht() {
     }
 

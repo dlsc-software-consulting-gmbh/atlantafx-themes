@@ -2,8 +2,14 @@ package com.dlsc.atlantafx.themes;
 
 import atlantafx.base.theme.Theme;
 
+/**
+ * Summer Light AtlantaFX theme.
+ */
 public final class SummerLight implements Theme {
 
+    /**
+     * Creates a new instance.
+     */
     public SummerLight() {
     }
 

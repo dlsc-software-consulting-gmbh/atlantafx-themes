@@ -2,8 +2,14 @@ package com.dlsc.atlantafx.themes;
 
 import atlantafx.base.theme.Theme;
 
+/**
+ * Navy Dark AtlantaFX theme.
+ */
 public final class NavyDark implements Theme {
 
+    /**
+     * Creates a new instance.
+     */
     public NavyDark() {
     }
 

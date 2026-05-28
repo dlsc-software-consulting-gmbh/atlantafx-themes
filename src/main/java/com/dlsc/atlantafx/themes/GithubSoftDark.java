@@ -2,8 +2,14 @@ package com.dlsc.atlantafx.themes;
 
 import atlantafx.base.theme.Theme;
 
+/**
+ * GitHub Soft Dark AtlantaFX theme.
+ */
 public final class GithubSoftDark implements Theme {
 
+    /**
+     * Creates a new instance.
+     */
     public GithubSoftDark() {
     }
 

@@ -2,8 +2,14 @@ package com.dlsc.atlantafx.themes;
 
 import atlantafx.base.theme.Theme;
 
+/**
+ * Winter Dark AtlantaFX theme.
+ */
 public final class WinterDark implements Theme {
 
+    /**
+     * Creates a new instance.
+     */
     public WinterDark() {
     }
 

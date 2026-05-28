@@ -2,8 +2,14 @@ package com.dlsc.atlantafx.themes;
 
 import atlantafx.base.theme.Theme;
 
+/**
+ * Army Light AtlantaFX theme.
+ */
 public final class ArmyLight implements Theme {
 
+    /**
+     * Creates a new instance.
+     */
     public ArmyLight() {
     }
 

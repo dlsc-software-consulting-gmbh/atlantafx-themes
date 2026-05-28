@@ -2,8 +2,14 @@ package com.dlsc.atlantafx.themes;
 
 import atlantafx.base.theme.Theme;
 
+/**
+ * Spring Dark AtlantaFX theme.
+ */
 public final class SpringDark implements Theme {
 
+    /**
+     * Creates a new instance.
+     */
     public SpringDark() {
     }
 

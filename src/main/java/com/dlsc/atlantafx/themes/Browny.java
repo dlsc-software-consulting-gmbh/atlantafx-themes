@@ -2,8 +2,14 @@ package com.dlsc.atlantafx.themes;
 
 import atlantafx.base.theme.Theme;
 
+/**
+ * Browny AtlantaFX theme.
+ */
 public final class Browny implements Theme {
 
+    /**
+     * Creates a new instance.
+     */
     public Browny() {
     }
 

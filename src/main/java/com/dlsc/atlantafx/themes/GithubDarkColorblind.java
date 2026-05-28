@@ -2,8 +2,14 @@ package com.dlsc.atlantafx.themes;
 
 import atlantafx.base.theme.Theme;
 
+/**
+ * GitHub Dark Colorblind AtlantaFX theme.
+ */
 public final class GithubDarkColorblind implements Theme {
 
+    /**
+     * Creates a new instance.
+     */
     public GithubDarkColorblind() {
     }
 

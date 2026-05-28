@@ -2,8 +2,14 @@ package com.dlsc.atlantafx.themes;
 
 import atlantafx.base.theme.Theme;
 
+/**
+ * Blue Light AtlantaFX theme.
+ */
 public final class BlueLight implements Theme {
 
+    /**
+     * Creates a new instance.
+     */
     public BlueLight() {
     }
 
