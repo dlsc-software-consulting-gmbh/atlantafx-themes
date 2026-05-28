@@ -27,5 +27,13 @@ module com.dlsc.atlantafx.themes {
             com.dlsc.atlantafx.themes.Autumn,
             com.dlsc.atlantafx.themes.Blacky,
             com.dlsc.atlantafx.themes.ArmyDark,
-            com.dlsc.atlantafx.themes.ArmyLight;
+            com.dlsc.atlantafx.themes.ArmyLight,
+            com.dlsc.atlantafx.themes.FallDark,
+            com.dlsc.atlantafx.themes.FallLight,
+            com.dlsc.atlantafx.themes.SpringDark,
+            com.dlsc.atlantafx.themes.SpringLight,
+            com.dlsc.atlantafx.themes.SummerDark,
+            com.dlsc.atlantafx.themes.SummerLight,
+            com.dlsc.atlantafx.themes.WinterDark,
+            com.dlsc.atlantafx.themes.WinterLight;
 }
